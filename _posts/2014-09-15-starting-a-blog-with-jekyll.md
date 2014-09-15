@@ -7,8 +7,9 @@ When searching where to host our team’s blog we wanted to stay close to the co
 
 ## Where to Start?
 The first thing you will want to do is choose a static site generator.  To make it easy for you I’ve read through quite a bit material and the top 2 imo are:
-     * jekyll (ruby)
-     * cabin (javascript)
+
+* jekyll (ruby)
+* cabin (javascript)
 
 Both have their advantages but since I need some material for the next Ruby Meetup we are going to start this blog with using Jekyll.  
 
@@ -38,4 +39,4 @@ There are few things we will need to do configure Poole
 
 That’s it! Now run ```jekyll build``` Commit and push!
 
-You can add [Disqus Comments](https://help.disqus.com/customer/portal/articles/472138-jekyll-installation-instructions) and customize it a ton of different ways. Good luck!
+You can add [Disqus Comments](https://help.disqus.com/customer/portal/articles/472138-jekyll-installation-instructions) and customize it a ton of different ways. Good luck
