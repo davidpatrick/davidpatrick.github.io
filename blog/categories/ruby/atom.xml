@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ruby | dponrails]]></title>
   <link href="http://davidpatrick.github.io/blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://davidpatrick.github.io/"/>
-  <updated>2014-09-16T01:45:11-07:00</updated>
+  <updated>2014-09-16T01:48:54-07:00</updated>
   <id>http://davidpatrick.github.io/</id>
   <author>
     <name><![CDATA[David Patrick]]></name>
@@ -96,7 +96,7 @@ rake deploy
   <entry>
     <title type="html"><![CDATA[Starting a Blog with Jekyll]]></title>
     <link href="http://davidpatrick.github.io/blog/2014/09/15/starting-a-blog-with-jekyll/"/>
-    <updated>2014-09-15T00:00:00-07:00</updated>
+    <updated>2014-09-15T10:47:00-07:00</updated>
     <id>http://davidpatrick.github.io/blog/2014/09/15/starting-a-blog-with-jekyll</id>
     <content type="html"><![CDATA[<p>When searching where to host our team’s blog we wanted to stay close to the community that we were trying to give back to. <a href="http://pages.github.com/">Github Pages</a> immediately stood out and with the cost of $0 it’s perfect.  Github Pages allows us to keep using the same tools we use everyday in Development for Blogging.</p>
 
