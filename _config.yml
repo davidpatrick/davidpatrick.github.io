@@ -1,0 +1,22 @@
+# Dependencies
+markdown:         redcarpet
+pygments:         true
+
+# Permalinks
+permalink:        pretty
+
+# Setup
+title:            dponrails
+description:      programming with a dad
+url:              http://dponrails.com
+paginate:         1
+baseurl:          /
+author:
+  name:           David Patrick
+  url:            https://twitter.com/dponrails
+  email:          davidwalterpatrick@gmail.com
+
+# Custom vars
+version:          1.0.0
+github:
+  repo:           https://github.com/davidpatrick/davd.github.io

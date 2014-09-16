@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Starting a Blog with Jekyll &middot; dponrails
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          dponrails
+        </a>
+      </h1>
+      <p class="lead">programming with a dad</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/archive/">Archive</a>
+          
+        
+      
+        
+      
+        
+          
+        
+      
+    </nav>
+
+    <p>&copy; 2014. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">Starting a Blog with Jekyll</h1>
+  <span class="post-date">15 Sep 2014</span>
+  <p>When searching where to host our team’s blog we wanted to stay close to the community that we were trying to give back to. <a href="http://pages.github.com/">Github Pages</a> immediately stood out and with the cost of $0 it’s perfect.  Github Pages allows us to keep using the same tools we use everyday in Development for Blogging.</p>
+
+<h2>Where to Start?</h2>
+
+<p>The first thing you will want to do is choose a static site generator.  To make it easy for you I’ve read through quite a bit material and the top 2 imo are:
+     * jekyll (ruby)
+     * cabin (javascript)</p>
+
+<p>Both have their advantages but since I need some material for the next Ruby Meetup we are going to start this blog with using Jekyll.  </p>
+
+<h2>Getting Started</h2>
+
+<p><a href="https://pages.github.com/">Github Pages</a> is straight forward and easy to follow.</p>
+
+<p><a href="http://jekyllrb.com/">Jekyll</a>  is even easier to install
+ <code>gem install jekyll</code></p>
+
+<p>There are a ton of resources and tools from here to get you started with Jekyll.  One of the most common is <a href="http://octopress.org/">Octopress</a>.  But I like starting from something even more basic.  That’s where I found <a href="https://github.com/poole/poole">Poole</a>. </p>
+
+<p>Even more so let’s start from one of its themes <a href="https://github.com/poole/hyde">Hyde</a>. Download the <a href="https://github.com/poole/hyde/archive/master.zip">source code</a> and extract it into our new project.</p>
+
+<p>Let’s take a look at the file structure.  You will see some files/folders with underscores.  Every thing without an underscore will get copied into to the _site folder on build.</p>
+
+<p>If you open up /_layouts/post.html  you will see handlebars used for injecting content.  This is using the <a href="http://liquidmarkup.org/">Liquid Markup Language</a>. </p>
+
+<h3>Configuring Poole</h3>
+
+<p>There are few things we will need to do configure Poole</p>
+
+<ul>
+<li><p>First, unelss you are using a custom domain is to remove the CNAME file, otherwise edit it with your domain.</p></li>
+<li><p>Second, let’s set customize the _config.yml to fit our blog.</p></li>
+<li><p>Third, remove the default blog posts under the _posts folder and write your our first post.</p></li>
+</ul>
+
+<p>That’s it! Now run <code>jekyll build</code> Commit and push!</p>
+
+<p>You can add <a href="https://help.disqus.com/customer/portal/articles/472138-jekyll-installation-instructions">Disqus Comments</a> and customize it a ton of different ways. Good luck!</p>
+
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+  </ul>
+</div>
+
+    </div>
+
+  </body>
+</html>

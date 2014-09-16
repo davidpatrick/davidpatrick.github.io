@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+ <title>dponrails</title>
+ <link href="http://dponrails.com/atom.xml" rel="self"/>
+ <link href="http://dponrails.com/"/>
+ <updated>2014-09-14T22:01:42-07:00</updated>
+ <id>http://dponrails.com</id>
+ <author>
+   <name>David Patrick</name>
+   <email>davidwalterpatrick@gmail.com</email>
+ </author>
+
+ 
+ <entry>
+   <title>Starting a Blog with Jekyll</title>
+   <link href="http://dponrails.com/2014/09/15/starting-a-blog-with-jekyll/"/>
+   <updated>2014-09-15T00:00:00-07:00</updated>
+   <id>http://dponrails.com/2014/09/15/starting-a-blog-with-jekyll</id>
+   <content type="html">&lt;p&gt;When searching where to host our team’s blog we wanted to stay close to the community that we were trying to give back to. &lt;a href=&quot;http://pages.github.com/&quot;&gt;Github Pages&lt;/a&gt; immediately stood out and with the cost of $0 it’s perfect.  Github Pages allows us to keep using the same tools we use everyday in Development for Blogging.&lt;/p&gt;
+
+&lt;h2&gt;Where to Start?&lt;/h2&gt;
+
+&lt;p&gt;The first thing you will want to do is choose a static site generator.  To make it easy for you I’ve read through quite a bit material and the top 2 imo are:
+     * jekyll (ruby)
+     * cabin (javascript)&lt;/p&gt;
+
+&lt;p&gt;Both have their advantages but since I need some material for the next Ruby Meetup we are going to start this blog with using Jekyll.  &lt;/p&gt;
+
+&lt;h2&gt;Getting Started&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://pages.github.com/&quot;&gt;Github Pages&lt;/a&gt; is straight forward and easy to follow.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;  is even easier to install
+ &lt;code&gt;gem install jekyll&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;There are a ton of resources and tools from here to get you started with Jekyll.  One of the most common is &lt;a href=&quot;http://octopress.org/&quot;&gt;Octopress&lt;/a&gt;.  But I like starting from something even more basic.  That’s where I found &lt;a href=&quot;https://github.com/poole/poole&quot;&gt;Poole&lt;/a&gt;. &lt;/p&gt;
+
+&lt;p&gt;Even more so let’s start from one of its themes &lt;a href=&quot;https://github.com/poole/hyde&quot;&gt;Hyde&lt;/a&gt;. Download the &lt;a href=&quot;https://github.com/poole/hyde/archive/master.zip&quot;&gt;source code&lt;/a&gt; and extract it into our new project.&lt;/p&gt;
+
+&lt;p&gt;Let’s take a look at the file structure.  You will see some files/folders with underscores.  Every thing without an underscore will get copied into to the _site folder on build.&lt;/p&gt;
+
+&lt;p&gt;If you open up /_layouts/post.html  you will see handlebars used for injecting content.  This is using the &lt;a href=&quot;http://liquidmarkup.org/&quot;&gt;Liquid Markup Language&lt;/a&gt;. &lt;/p&gt;
+
+&lt;h3&gt;Configuring Poole&lt;/h3&gt;
+
+&lt;p&gt;There are few things we will need to do configure Poole&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;First, unelss you are using a custom domain is to remove the CNAME file, otherwise edit it with your domain.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Second, let’s set customize the _config.yml to fit our blog.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Third, remove the default blog posts under the _posts folder and write your our first post.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;That’s it! Now run &lt;code&gt;jekyll build&lt;/code&gt; Commit and push!&lt;/p&gt;
+
+&lt;p&gt;You can add &lt;a href=&quot;https://help.disqus.com/customer/portal/articles/472138-jekyll-installation-instructions&quot;&gt;Disqus Comments&lt;/a&gt; and customize it a ton of different ways. Good luck!&lt;/p&gt;
+</content>
+ </entry>
+ 
+
+</feed>
