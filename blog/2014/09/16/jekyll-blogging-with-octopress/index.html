@@ -160,9 +160,33 @@
 </span><span class='line'>rake generate</span></code></pre></td></tr></table></div></figure>
 
 
-<p>And refresh our blog and you will see your newly installed theme.  That&rsquo;s it! Go read more about Octopress and what additionally you can do with it in their <a href="http://octopress.org/docs/">docs</a>.</p>
+<p>And refresh our blog and you will see your newly installed theme.</p>
 
 <h2>Deploying Octopress Generated Content</h2>
+
+<p>Unfortunately Deploying with Octopress is not as easy as it was with Poole.  Since Octopress is a local Ruby Blogging Engine, we aren&rsquo;t going to want to commit all the code in our Octopress folder.  We actually need to set up our repo in a rake command <code>rake setup_github_pages</code></p>
+
+<p>This will ask us for our github pages repo and initialize that repo into <code>/_deploy</code>.  You can go there to resolve any merge conflicts you might have with our new engines generated content.</p>
+
+<p>After you have finished that let&rsquo;s go ahead and deploy the code to Github using Octopress rake tasks.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake generate
+</span><span class='line'>rake deploy</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This will generate our html and commit and push our code to the repo for us.</p>
+
+<h2>Final Conclusions</h2>
+
+<p>Octopress give us a lot of free stuff for a relatively cheap investment.  However, even after all it gives us, it adds a layer of complexity that feels dirty when comparing to something as simple and elegant as Poole.</p>
+
+<p>With Poole we are able to write all of our posts in markdown files and push the markdown files to our repo. This makes accessing the blog from different machines, or even remotely, A BREEZE! We can edit the markdown directly on github!  It also had a simple beauty to it when you looked at the source on Github.</p>
+
+<p>With Octopress we have to run rake tasks that convert our markdown pages to htmland then we have to run a deploy script to commit our changes.  This also adds a complexity of setting up your Octopress engine on a <a href="http://blog.zerosharp.com/clone-your-octopress-to-blog-from-two-places/">second machine</a>.</p>
+
+<p>I will stick with Octopress for now on my personal blog because I enjoy the themes for it, but for the team blog, I will run with Poole and start customizing it to fit our needs.</p>
 </div>
 
 </article>
