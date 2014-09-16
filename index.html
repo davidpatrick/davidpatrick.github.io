@@ -7,9 +7,7 @@
 	<meta charset="utf-8">
 	<title>dponrails</title>
 	<meta name="author" content="David Patrick">
-
-	
-	<meta name="description" content="jekyll, octopress, ruby Jekyll Blogging With Octopress In my first blog post, I talked about using Jekyll with Poole. After installing some plugins &hellip;">
+	<meta name="description" content="An adventure through Web Frameworks. Ruby on Rails, Angular, Ionic Framework, Node.js, and more to come.">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -51,19 +49,8 @@
     <li><a href="/">Blog</a></li>
     <li><a href="/about/">About</a></li>
     <li><a href="/blog/archives">Archives</a></li>
-</ul>
-
-
+</ul></nav>
 <br>
-
-<section class="aboutme">
-  <p>
-    Development with a dad and the adventure through Web Frameworks.  Ruby on Rails, Angular, Ionic Framework, Node.js, and more to come.
-  </p>
-</section>
-
-<br>
-</nav>
 <nav id="sub-nav">
 	<div class="social">
 		
@@ -91,6 +78,22 @@
 			<a class="rss" href="/atom.xml" title="RSS">RSS</a>
 		
 	</div>
+
+	<section>
+  <h3>Recent Posts</h3>
+  <ul id="recent_posts" style="list-style:none;">
+    
+      <li class="post">
+        <a href="/blog/2014/09/16/jekyll-blogging-with-octopress/">Jekyll Blogging With Octopress</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/09/15/starting-a-blog-with-jekyll/">Starting a Blog With Jekyll</a>
+      </li>
+    
+  </ul>
+</section>
+
 </nav>
 </header>				
 			</div>
@@ -104,11 +107,8 @@
 <div itemscope itemtype="http://schema.org/Blog">
 
 
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">	<div class="meta">
 		<div class="date">
-
-
 
 
 
@@ -118,7 +118,7 @@
   
 
 
-<time datetime="2014-09-16T11:03:54-07:00" data-updated="true" itemprop="datePublished"></time></div>
+<time datetime="2014-09-16T11:03:54-07:00" data-updated="true" itemprop="datePublished">Sep 16</time></div>
 		<div class="tags">
 
 
@@ -128,111 +128,21 @@
 </div>
 		
 	</div>
+
 	<h1 class="title" itemprop="name"><a href="/blog/2014/09/16/jekyll-blogging-with-octopress/" itemprop="url">Jekyll Blogging With Octopress</a></h1>
 	<div class="entry-content" itemprop="articleBody">
-		<p>In my first <a href="/blog/2014/09/15/starting-a-blog-with-jekyll">blog post</a>, I talked about using Jekyll with Poole.</p>
+		<p>In my first <a href="/blog/2014/09/15/starting-a-blog-with-jekyll">blog post</a>, I talked about using Jekyll with Poole.  After installing some plugins and customizing the theme, I realized I was doing a lot of the heavy lifting that the <a href="http://octopress.org/">Octopress</a> community has already done.  So this time we are going to migrate our blog over to using Octopress.</p>
 
-<p>After installing some plugins and customizing the theme, I realized I was doing a lot of the heavy lifting that the <a href="http://octopress.org/">Octopress</a> community has already done.</p>
-
-<p>So this time we are going to go through and try using Octopress.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git://github.com/imathis/octopress.git octopress
-</span><span class='line'>cd octopress
-</span><span class='line'>bundle install
-</span><span class='line'>rake install</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Now personalize the _config.yml.</p>
-
-<p>If you&rsquo;ve followed the original post starting with Poole, or have previous posts in markdown format, copy them over to <code>./source/_posts/</code> path.</p>
-
-<h2>What Octopress give us</h2>
-
-<p>Octopress gives us a lot of bloat&hellip; There are a lot of preinstalled plugins in Octopress that I am not going to use, but I will rip them out later.  You will also see our folder structure is very heavy compared to when we used Poole.  However it affords us some advantages that I am going to utilize and that is better looking themes and decent plugins.</p>
-
-<p>To create a live-reload session with our site let&rsquo;s go ahead and boot up the preview and see what our blog looks like
-  <code>rake preview</code></p>
-
-<p>Now let&rsquo;s create our first post in Octopress with it&rsquo;s included rake task</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake new_post["Jekyll Blogging with Octopress"]</span></code></pre></td></tr></table></div></figure>
-
-
-<p>If we look at the generated post it gives us comments and categories arlready built in.  It also generates the file name and time for us.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>---
-</span><span class='line'>layout: post
-</span><span class='line'>title: "Jekyll Blogging with Octopress"
-</span><span class='line'>date: 2014-09-15 11:03:54 -0700
-</span><span class='line'>comments: true
-</span><span class='line'>categories: 
-</span><span class='line'>---</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>Installing an Octopress Theme</h2>
-
-<p>There is a <a href="https://github.com/imathis/octopress/wiki/3rd-Party-Octopress-Themes">huge list</a> of themes to choose from.  The one that I will be using is <a href="https://github.com/shashankmehta/greyshade">greyshade</a>.  To install it, in the root of our project we run</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git@github.com:shashankmehta/greyshade.git .themes/greyshade
-</span><span class='line'>rake "install[greyshade]"
-</span><span class='line'>rake generate</span></code></pre></td></tr></table></div></figure>
-
-
-<p>And refresh our blog and you will see your newly installed theme.</p>
-
-<h2>Deploying Octopress Generated Content</h2>
-
-<p>Unfortunately Deploying with Octopress is not as easy as it was with Poole.  Since Octopress is a local Ruby Blogging Engine, we aren&rsquo;t going to want to commit all the code in our Octopress folder.  We actually need to set up our repo in a rake command <code>rake setup_github_pages</code></p>
-
-<p>This will ask us for our github pages repo and initialize that repo into <code>/_deploy</code>.  You can go there to resolve any merge conflicts you might have with our new engines generated content.</p>
-
-<p>After you have finished that let&rsquo;s go ahead and deploy the code to Github using Octopress rake tasks.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake generate
-</span><span class='line'>rake deploy</span></code></pre></td></tr></table></div></figure>
-
-
-<p>This will generate our html and commit and push our code to the repo for us.</p>
-
-<h2>Final Conclusions</h2>
-
-<p>Octopress give us a lot of free stuff for a relatively cheap investment.  However, even after all it gives us, it adds a layer of complexity that feels dirty when comparing to something as simple and elegant as Poole.</p>
-
-<p>With Poole we are able to write all of our posts in markdown files and push the markdown files to our repo. This makes accessing the blog from different machines, or even remotely, A BREEZE! We can edit the markdown directly on github!  It also had a simple beauty to it when you looked at the source on Github.</p>
-
-<p>With Octopress we have to run rake tasks that convert our markdown pages to htmland then we have to run a deploy script to commit our changes.  This also adds a complexity of setting up your Octopress engine on a <a href="http://blog.zerosharp.com/clone-your-octopress-to-blog-from-two-places/">second machine</a>.</p>
-
-<p>I will stick with Octopress for now on my personal blog because I enjoy the themes for it, but for the team blog, I will run with Poole and start customizing it to fit our needs.</p>
 
 		
-		
+		<a href="/blog/2014/09/16/jekyll-blogging-with-octopress/" class="more-link">Read on &rarr;</a>
 	</div>
 
 </article>
 
 
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">	<div class="meta">
 		<div class="date">
-
-
 
 
 
@@ -242,7 +152,7 @@
   
 
 
-<time datetime="2014-09-15T10:47:00-07:00" data-updated="true" itemprop="datePublished"></time></div>
+<time datetime="2014-09-15T10:47:00-07:00" data-updated="true" itemprop="datePublished">Sep 15</time></div>
 		<div class="tags">
 
 
@@ -252,54 +162,14 @@
 </div>
 		
 	</div>
+
 	<h1 class="title" itemprop="name"><a href="/blog/2014/09/15/starting-a-blog-with-jekyll/" itemprop="url">Starting a Blog With Jekyll</a></h1>
 	<div class="entry-content" itemprop="articleBody">
 		<p>When searching where to host our team’s blog we wanted to stay close to the community that we were trying to give back to. <a href="http://pages.github.com/">Github Pages</a> immediately stood out and with the cost of $0 it’s perfect.  Github Pages allows us to keep using the same tools we use everyday in Development for Blogging.</p>
 
-<h2>Where to Start?</h2>
-
-<p>The first thing you will want to do is choose a static site generator.  To make it easy for you I’ve read through quite a bit material and the top 2 imo are:</p>
-
-<ul>
-<li>jekyll (ruby)</li>
-<li>cabin (javascript)</li>
-</ul>
-
-
-<p>Both have their advantages but since I need some material for the next Ruby Meetup we are going to start this blog with using Jekyll.</p>
-
-<h2>Getting Started</h2>
-
-<p><a href="https://pages.github.com/">Github Pages</a> is straight forward and easy to follow.</p>
-
-<p><a href="http://jekyllrb.com/">Jekyll</a>  is even easier to install
- <code>gem install jekyll</code></p>
-
-<p>There are a ton of resources and tools from here to get you started with Jekyll.  One of the most common is <a href="http://octopress.org/">Octopress</a>.  But I like starting from something even more basic.  That’s where I found <a href="https://github.com/poole/poole">Poole</a>.</p>
-
-<p>Even more so let’s start from one of its themes <a href="https://github.com/poole/hyde">Hyde</a>. Download the <a href="https://github.com/poole/hyde/archive/master.zip">source code</a> and extract it into our new project.</p>
-
-<p>Let’s take a look at the file structure.  You will see some files/folders with underscores.  Every thing without an underscore will get copied into to the _site folder on build.</p>
-
-<p>If you open up /_layouts/post.html  you will see handlebars used for injecting content.  This is using the <a href="http://liquidmarkup.org/">Liquid Markup Language</a>.</p>
-
-<h3>Configuring Poole</h3>
-
-<p>There are few things we will need to do configure Poole</p>
-
-<ul>
-<li><p>First, unelss you are using a custom domain is to remove the CNAME file, otherwise edit it with your domain.</p></li>
-<li><p>Second, let’s set customize the _config.yml to fit our blog.</p></li>
-<li><p>Third, remove the default blog posts under the _posts folder and write your our first post.</p></li>
-</ul>
-
-
-<p>That’s it! You can preview the blog  with <code>jekyll serve</code> and visiting <code>htpp://localhost:4000/</code>  If you&rsquo;re happy with the way everything looks run <code>jekyll build</code> commit your changes and push!</p>
-
-<p>You can add <a href="https://help.disqus.com/customer/portal/articles/472138-jekyll-installation-instructions">Disqus Comments</a> and customize it a ton of different ways. Good luck!</p>
 
 		
-		
+		<a href="/blog/2014/09/15/starting-a-blog-with-jekyll/" class="more-link">Read on &rarr;</a>
 	</div>
 
 </article>
@@ -315,8 +185,7 @@
 
     David Patrick
 
-
-Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a></footer>
+</footer>
 		</div>
 	</div>
 	
