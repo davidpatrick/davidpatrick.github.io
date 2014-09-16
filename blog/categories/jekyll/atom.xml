@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[dponrails]]></title>
-  <link href="http://davidpatrick.github.io/atom.xml" rel="self"/>
+  <title><![CDATA[Category: jekyll | dponrails]]></title>
+  <link href="http://davidpatrick.github.io/blog/categories/jekyll/atom.xml" rel="self"/>
   <link href="http://davidpatrick.github.io/"/>
   <updated>2014-09-16T00:38:03-07:00</updated>
   <id>http://davidpatrick.github.io/</id>
@@ -18,21 +18,17 @@
     <link href="http://davidpatrick.github.io/blog/2014/09/16/jekyll-blogging-with-octopress/"/>
     <updated>2014-09-16T11:03:54-07:00</updated>
     <id>http://davidpatrick.github.io/blog/2014/09/16/jekyll-blogging-with-octopress</id>
-    <content type="html"><![CDATA[<p>In my first <a href="http://davidpatrick.github.io/blog/2014/09/15/starting-a-blog-with-jekyll">blog post</a>, I talked about using Jekyll with Poole.</p>
+    <content type="html"><![CDATA[<p>In my first <a href="/blog/2014/09/15/starting-a-blog-with-jekyll">blog post</a>, I talked about using Jekyll with Poole.</p>
 
 <p>After installing some plugins and customizing the theme, I realized I was doing a lot of the heavy lifting that the <a href="http://octopress.org/">Octopress</a> community has already done.</p>
 
 <p>So this time we are going to go through and try using Octopress.</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git://github.com/imathis/octopress.git octopress
-</span><span class='line'>cd octopress
-</span><span class='line'>bundle install
-</span><span class='line'>rake install</span></code></pre></td></tr></table></div></figure>
-
+<pre><code>git clone git://github.com/imathis/octopress.git octopress
+cd octopress
+bundle install
+rake install
+</code></pre>
 
 <p>Now personalize the _config.yml.</p>
 
@@ -47,39 +43,28 @@
 
 <p>Now let&rsquo;s create our first post in Octopress with it&rsquo;s included rake task</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake new_post["Jekyll Blogging with Octopress"]</span></code></pre></td></tr></table></div></figure>
-
+<pre><code>rake new_post["Jekyll Blogging with Octopress"]
+</code></pre>
 
 <p>If we look at the generated post it gives us comments and categories arlready built in.  It also generates the file name and time for us.</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>---
-</span><span class='line'>layout: post
-</span><span class='line'>title: "Jekyll Blogging with Octopress"
-</span><span class='line'>date: 2014-09-15 11:03:54 -0700
-</span><span class='line'>comments: true
-</span><span class='line'>categories: 
-</span><span class='line'>---</span></code></pre></td></tr></table></div></figure>
-
+<pre><code>---
+layout: post
+title: "Jekyll Blogging with Octopress"
+date: 2014-09-15 11:03:54 -0700
+comments: true
+categories: 
+---
+</code></pre>
 
 <h2>Installing an Octopress Theme</h2>
 
-<p>There is a <a href="https://github.com/imathis/octopress/wiki/3rd-Party-Octopress-Themes">huge list</a> of themes to choose from.  The one that I will be using is <a href="https://github.com/shashankmehta/greyshade">greyshade</a>.  To install it, in the root of our project we run</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git@github.com:shashankmehta/greyshade.git .themes/greyshade
-</span><span class='line'>rake "install[greyshade]"
-</span><span class='line'>rake generate</span></code></pre></td></tr></table></div></figure>
-
+<p>There is a <a href="https://github.com/imathis/octopress/wiki/3rd-Party-Octopress-Themes">huge list</a> of themes to choose from.  The one that I will be using is <a href="https://github.com/shashankmehta/greyshade">greyshade</a>.  To install it, in the root of our project we run
+<code>
+git clone git@github.com:shashankmehta/greyshade.git .themes/greyshade
+rake "install[greyshade]"
+rake generate
+</code></p>
 
 <p>And refresh our blog and you will see your newly installed theme.  That&rsquo;s it! Go read more about Octopress and what additionally you can do with it in their <a href="http://octopress.org/docs/">docs</a>.</p>
 

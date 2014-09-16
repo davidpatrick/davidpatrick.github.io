@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: octopress | dponrails]]></title>
+  <link href="http://davidpatrick.github.io/blog/categories/octopress/atom.xml" rel="self"/>
+  <link href="http://davidpatrick.github.io/"/>
+  <updated>2014-09-16T00:38:03-07:00</updated>
+  <id>http://davidpatrick.github.io/</id>
+  <author>
+    <name><![CDATA[David Patrick]]></name>
+    <email><![CDATA[batreyud@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Jekyll Blogging with Octopress]]></title>
+    <link href="http://davidpatrick.github.io/blog/2014/09/16/jekyll-blogging-with-octopress/"/>
+    <updated>2014-09-16T11:03:54-07:00</updated>
+    <id>http://davidpatrick.github.io/blog/2014/09/16/jekyll-blogging-with-octopress</id>
+    <content type="html"><![CDATA[<p>In my first <a href="/blog/2014/09/15/starting-a-blog-with-jekyll">blog post</a>, I talked about using Jekyll with Poole.</p>
+
+<p>After installing some plugins and customizing the theme, I realized I was doing a lot of the heavy lifting that the <a href="http://octopress.org/">Octopress</a> community has already done.</p>
+
+<p>So this time we are going to go through and try using Octopress.</p>
+
+<pre><code>git clone git://github.com/imathis/octopress.git octopress
+cd octopress
+bundle install
+rake install
+</code></pre>
+
+<p>Now personalize the _config.yml.</p>
+
+<p>If you&rsquo;ve followed the original post starting with Poole, or have previous posts in markdown format, copy them over to <code>./source/_posts/</code> path.</p>
+
+<h2>What Octopress give us</h2>
+
+<p>Octopress gives us a lot of bloat&hellip; There are a lot of preinstalled plugins in Octopress that I am not going to use, but I will rip them out later.  You will also see our folder structure is very heavy compared to when we used Poole.  However it affords us some advantages that I am going to utilize and that is better looking themes and decent plugins.</p>
+
+<p>To create a live-reload session with our site let&rsquo;s go ahead and boot up the preview and see what our blog looks like
+  <code>rake preview</code></p>
+
+<p>Now let&rsquo;s create our first post in Octopress with it&rsquo;s included rake task</p>
+
+<pre><code>rake new_post["Jekyll Blogging with Octopress"]
+</code></pre>
+
+<p>If we look at the generated post it gives us comments and categories arlready built in.  It also generates the file name and time for us.</p>
+
+<pre><code>---
+layout: post
+title: "Jekyll Blogging with Octopress"
+date: 2014-09-15 11:03:54 -0700
+comments: true
+categories: 
+---
+</code></pre>
+
+<h2>Installing an Octopress Theme</h2>
+
+<p>There is a <a href="https://github.com/imathis/octopress/wiki/3rd-Party-Octopress-Themes">huge list</a> of themes to choose from.  The one that I will be using is <a href="https://github.com/shashankmehta/greyshade">greyshade</a>.  To install it, in the root of our project we run
+<code>
+git clone git@github.com:shashankmehta/greyshade.git .themes/greyshade
+rake "install[greyshade]"
+rake generate
+</code></p>
+
+<p>And refresh our blog and you will see your newly installed theme.  That&rsquo;s it! Go read more about Octopress and what additionally you can do with it in their <a href="http://octopress.org/docs/">docs</a>.</p>
+
+<h2>Deploying Octopress Generated Content</h2>
+]]></content>
+  </entry>
+  
+</feed>
