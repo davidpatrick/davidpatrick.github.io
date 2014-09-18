@@ -4,7 +4,7 @@
   <title><![CDATA[dponrails]]></title>
   <link href="http://davidpatrick.github.io/atom.xml" rel="self"/>
   <link href="http://davidpatrick.github.io/"/>
-  <updated>2014-09-17T22:36:38-07:00</updated>
+  <updated>2014-09-17T22:45:09-07:00</updated>
   <id>http://davidpatrick.github.io/</id>
   <author>
     <name><![CDATA[David Patrick]]></name>
@@ -18,7 +18,7 @@
     <link href="http://davidpatrick.github.io/blog/2014/09/16/jekyll-blogging-with-octopress/"/>
     <updated>2014-09-16T11:03:54-07:00</updated>
     <id>http://davidpatrick.github.io/blog/2014/09/16/jekyll-blogging-with-octopress</id>
-    <content type="html"><![CDATA[<p>In my first <a href="http://davidpatrick.github.io/blog/2014/09/15/starting-a-blog-with-jekyll">blog post</a>, I talked about using Jekyll with Poole.  After installing some plugins and customizing the theme, I realized I was doing a lot of the heavy lifting that the <a href="http://octopress.org/">Octopress</a> community has already done.  So this time we are going to migrate our blog over to using Octopress.</p>
+    <content type="html"><![CDATA[<p>In my first <a href="http://davidpatrick.github.io/blog/2014/09/15/starting-a-blog-with-jekyll">blog post</a>, I talked about using Jekyll with Poole.  After installing some plugins and customizing the theme, I realized the <a href="http://octopress.org/">Octopress</a> community has already done a lot of these things.  So let&rsquo;s give it a shot and see if it can save us some time.</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -39,7 +39,7 @@
 
 <h2>What Octopress give us</h2>
 
-<p>Octopress gives us a lot of bloat&hellip; There are a lot of preinstalled plugins in Octopress that I am not going to use, but I will rip them out later.  You will also see our folder structure is very heavy compared to when we used Poole.  However it affords us some advantages that I am going to utilize and that is better looking themes and decent plugins.</p>
+<p>After installing Octopress, I immediately notice that it gives us a lot of&hellip; bloat. There are a ton of preinstalled plugins in Octopress and probably won&rsquo;t end up using half of them.  You will notice that the folder structure is very heavy compared to Poole or a plain Jekyll setup.  However Octopress does have some decent themes and a couple plugins I am going to utilize.</p>
 
 <p>To create a live-reload session with our site let&rsquo;s go ahead and boot up the preview and see what our blog looks like
   <code>rake preview</code></p>
