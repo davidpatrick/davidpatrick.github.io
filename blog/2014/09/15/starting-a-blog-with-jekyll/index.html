@@ -151,9 +151,9 @@
 
 <p>There are a ton of resources and tools from here to get you started with Jekyll.  One of the most common is <a href="http://octopress.org/">Octopress</a>.  But I like starting from something even more basic.  That’s where I found <a href="https://github.com/poole/poole">Poole</a>.</p>
 
-<p>Even more so let’s start from one of its themes <a href="https://github.com/poole/hyde">Hyde</a>. Download the <a href="https://github.com/poole/hyde/archive/master.zip">source code</a> and extract it into our new project.</p>
+<p>Even more so let’s start from one of its themes <a href="https://github.com/poole/hyde">Hyde</a>. Clone hyde for your new project <code>git clone https://github.com/poole/hyde.git project_name</code></p>
 
-<p>Let’s take a look at the file structure.  You will see some files/folders with underscores.  Every thing without an underscore will get copied into to the _site folder on build.</p>
+<p>If we take a look at the file structure of the new project we will see some files/folders with underscores.  Every thing without an underscore will get copied into to the _site folder on build.</p>
 
 <p>If you open up /_layouts/post.html  you will see handlebars used for injecting content.  This is using the <a href="http://liquidmarkup.org/">Liquid Markup Language</a>.</p>
 
@@ -163,12 +163,12 @@
 
 <ul>
 <li><p>First, unelss you are using a custom domain is to remove the CNAME file, otherwise edit it with your domain.</p></li>
-<li><p>Second, let’s set customize the _config.yml to fit our blog.</p></li>
-<li><p>Third, remove the default blog posts under the _posts folder and write your our first post.</p></li>
+<li><p>Second, let’s set customize the _config.yml to fit your blog.</p></li>
+<li><p>Third, follow the format in the  /_posts folder to write your first post.</p></li>
 </ul>
 
 
-<p>That’s it! You can preview the blog  with <code>jekyll serve</code> and visiting <code>htpp://localhost:4000/</code>  If you&rsquo;re happy with the way everything looks run <code>jekyll build</code> commit your changes and push!</p>
+<p>That’s it! You can preview the blog  with <code>jekyll serve</code> and visiting <code>htpp://localhost:4000/</code>  If you&rsquo;re happy with the way everything looks run <code>jekyll build</code> commit your changes and push to your repo!</p>
 
 <p>You can add <a href="https://help.disqus.com/customer/portal/articles/472138-jekyll-installation-instructions">Disqus Comments</a> and customize it a ton of different ways. Good luck!</p>
 </div>
