@@ -4,7 +4,7 @@
   <title><![CDATA[dponrails]]></title>
   <link href="http://davidpatrick.github.io/atom.xml" rel="self"/>
   <link href="http://davidpatrick.github.io/"/>
-  <updated>2014-09-17T22:19:20-07:00</updated>
+  <updated>2014-09-17T22:20:48-07:00</updated>
   <id>http://davidpatrick.github.io/</id>
   <author>
     <name><![CDATA[David Patrick]]></name>
@@ -144,10 +144,6 @@
 <p>There are a ton of resources and tools from here to get you started with Jekyll.  One of the most common is <a href="http://octopress.org/">Octopress</a>.  But I like starting from something even more basic.  That’s where I found <a href="https://github.com/poole/poole">Poole</a>.</p>
 
 <p>Even more so let’s start from one of its themes <a href="https://github.com/poole/hyde">Hyde</a>. Clone hyde for your new project <code>git clone https://github.com/poole/hyde.git project_name</code></p>
-
-<p>If we take a look at the file structure of the new project we will see some files/folders with underscores.  Every thing without an underscore will get copied into to the _site folder on build.</p>
-
-<p>If you open up /_layouts/post.html  you will see handlebars used for injecting content.  This is using the <a href="http://liquidmarkup.org/">Liquid Markup Language</a>.</p>
 
 <h3>Configuring Poole</h3>
 
