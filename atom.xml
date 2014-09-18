@@ -4,7 +4,7 @@
   <title><![CDATA[dponrails]]></title>
   <link href="http://davidpatrick.github.io/atom.xml" rel="self"/>
   <link href="http://davidpatrick.github.io/"/>
-  <updated>2014-09-17T22:20:48-07:00</updated>
+  <updated>2014-09-17T22:36:38-07:00</updated>
   <id>http://davidpatrick.github.io/</id>
   <author>
     <name><![CDATA[David Patrick]]></name>
@@ -20,24 +20,22 @@
     <id>http://davidpatrick.github.io/blog/2014/09/16/jekyll-blogging-with-octopress</id>
     <content type="html"><![CDATA[<p>In my first <a href="http://davidpatrick.github.io/blog/2014/09/15/starting-a-blog-with-jekyll">blog post</a>, I talked about using Jekyll with Poole.  After installing some plugins and customizing the theme, I realized I was doing a lot of the heavy lifting that the <a href="http://octopress.org/">Octopress</a> community has already done.  So this time we are going to migrate our blog over to using Octopress.</p>
 
-<!-- more -->
-
-
-
-
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git://github.com/imathis/octopress.git octopress
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git://github.com/imathis/octopress.git project-name
 </span><span class='line'>cd octopress
 </span><span class='line'>bundle install
 </span><span class='line'>rake install</span></code></pre></td></tr></table></div></figure>
 
 
-<p>Now personalize the _config.yml.</p>
+<p>Customize <code>./_config.yml</code> for your blog.</p>
 
-<p>If you&rsquo;ve followed the original post starting with Poole, or have previous posts in markdown format, copy them over to <code>./source/_posts/</code> path.</p>
+<p>If you&rsquo;ve followed the original post starting with Poole, or have previous posts in markdown format, copy them over to <code>./source/_posts/</code></p>
+
+<!-- more -->
+
 
 <h2>What Octopress give us</h2>
 
@@ -86,11 +84,11 @@
 
 <h2>Deploying Octopress Generated Content</h2>
 
-<p>Unfortunately Deploying with Octopress is not as easy as it was with Poole.  Since Octopress is a local Ruby Blogging Engine, we aren&rsquo;t going to want to commit all the code in our Octopress folder.  We actually need to set up our repo in a rake command <code>rake setup_github_pages</code></p>
+<p>Unfortunately Deploying with Octopress is not as easy as it was with Poole.  Since Octopress is a local Ruby Blogging Engine, we aren&rsquo;t going to commit all the code in our Octopress folder.  We actually need to set up our repo in a rake command <code>rake setup_github_pages</code></p>
 
-<p>This will ask us for our github pages repo and initialize that repo into <code>/_deploy</code>.  You can go there to resolve any merge conflicts you might have with our new engines generated content.</p>
+<p>This will ask us for our github pages repo and initialize that repo into <code>/_deploy</code>.  If you are converting an existing repo, like I am, you are going to have a ton of merge conflicts.  Octopress doesn&rsquo;t push markdown files like a plain Jekyllrb install would, it generates html pages that it pushes&hellip;  This means it is basically going to wipe out our whole repo if we were using straight Jekyll.</p>
 
-<p>After you have finished that let&rsquo;s go ahead and deploy the code to Github using Octopress rake tasks.</p>
+<p>After you have finished with that mess let&rsquo;s go ahead and deploy the code to Github using</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -102,13 +100,13 @@
 
 <h2>Final Conclusions</h2>
 
-<p>Octopress give us a lot of free stuff for a relatively cheap investment.  However, even after all it gives us, it adds a layer of complexity that feels dirty when comparing to something as simple and elegant as Poole.</p>
+<p>Octopress give us a lot of free stuff for a relatively cheap investment.  However, even after all it gives us, it adds a layer of complexity that is dirty when comparing to something as simple and elegant as Poole or just plain old Jekyllrb itself.</p>
 
-<p>With Poole we are able to write all of our posts in markdown files and push the markdown files to our repo. This makes accessing the blog from different machines, or even remotely, A BREEZE! We can edit the markdown directly on github!  It also had a simple beauty to it when you looked at the source on Github.</p>
+<p>With Jekyllrb/Poole we are able to write all of our posts in markdown files and push the markdown files to our repo. This makes accessing the blog from different machines, or even remotely, A BREEZE! We can edit the markdown directly on github!  It also had a simple beauty to it when you looked at the source on Github.</p>
 
 <p>With Octopress we have to run rake tasks that convert our markdown pages to html and then we have to run a deploy script to commit our changes.  This also adds a complexity of setting up your Octopress engine on a <a href="http://blog.zerosharp.com/clone-your-octopress-to-blog-from-two-places/">second machine</a>.</p>
 
-<p>I will stick with Octopress for now on my personal blog because I enjoy the themes and plugins for it, but for the team blog, I will run with Poole and start customizing it to fit our needs.</p>
+<p>I am not a big fan of Octopress, but at the time as I write this blog I am still using it. However I plan to switch back to plain old vanilla Jekyllrb.</p>
 ]]></content>
   </entry>
   
@@ -118,9 +116,6 @@
     <updated>2014-09-15T10:47:00-07:00</updated>
     <id>http://davidpatrick.github.io/blog/2014/09/15/starting-a-blog-with-jekyll</id>
     <content type="html"><![CDATA[<p>When searching where to host our team’s blog we wanted to stay close to the community that we were trying to give back to. <a href="http://pages.github.com/">Github Pages</a> immediately stood out and with the cost of $0 it’s perfect.  Github Pages allows us to keep using the same tools we use everyday in Development for Blogging.</p>
-
-<!-- more -->
-
 
 <h2>Where to Start?</h2>
 
@@ -134,16 +129,18 @@
 
 <p>Both have their advantages but since I need some material for the next Ruby Meetup we are going to start this blog with using Jekyll.</p>
 
+<!-- more -->
+
+
 <h2>Getting Started</h2>
 
 <p><a href="https://pages.github.com/">Github Pages</a> is straight forward and easy to follow.</p>
 
-<p><a href="http://jekyllrb.com/">Jekyll</a>  is even easier to install
- <code>gem install jekyll</code></p>
+<p><a href="http://jekyllrb.com/">Jekyll</a>  is even easier <code>gem install jekyll</code></p>
 
 <p>There are a ton of resources and tools from here to get you started with Jekyll.  One of the most common is <a href="http://octopress.org/">Octopress</a>.  But I like starting from something even more basic.  That’s where I found <a href="https://github.com/poole/poole">Poole</a>.</p>
 
-<p>Even more so let’s start from one of its themes <a href="https://github.com/poole/hyde">Hyde</a>. Clone hyde for your new project <code>git clone https://github.com/poole/hyde.git project_name</code></p>
+<p>Let&rsquo;s start with one of their themes <a href="https://github.com/poole/lanyon">Hyde</a>. To start the new project let&rsquo;s clone their repo <code>git clone https://github.com/poole/lanyon.git project-name</code></p>
 
 <h3>Configuring Poole</h3>
 
@@ -151,8 +148,8 @@
 
 <ul>
 <li><p>First, unelss you are using a custom domain is to remove the CNAME file, otherwise edit it with your domain.</p></li>
-<li><p>Second, let’s set customize the _config.yml to fit your blog.</p></li>
-<li><p>Third, follow the format in the  /_posts folder to write your first post.</p></li>
+<li><p>Second, let’s set customize <code>./_config.yml</code> to fit your blog.</p></li>
+<li><p>Third, follow the format in the  <code>./_posts/</code> folder to write your first post.</p></li>
 </ul>
 
 

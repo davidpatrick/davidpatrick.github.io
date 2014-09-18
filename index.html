@@ -132,6 +132,20 @@
 	<div class="entry-content" itemprop="articleBody">
 		<p>In my first <a href="/blog/2014/09/15/starting-a-blog-with-jekyll">blog post</a>, I talked about using Jekyll with Poole.  After installing some plugins and customizing the theme, I realized I was doing a lot of the heavy lifting that the <a href="http://octopress.org/">Octopress</a> community has already done.  So this time we are going to migrate our blog over to using Octopress.</p>
 
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git://github.com/imathis/octopress.git project-name
+</span><span class='line'>cd octopress
+</span><span class='line'>bundle install
+</span><span class='line'>rake install</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Customize <code>./_config.yml</code> for your blog.</p>
+
+<p>If you&rsquo;ve followed the original post starting with Poole, or have previous posts in markdown format, copy them over to <code>./source/_posts/</code></p>
+
 
 		
 		<a href="/blog/2014/09/16/jekyll-blogging-with-octopress/" class="more-link">Read on &rarr;</a>
@@ -165,6 +179,18 @@
 	<h1 class="title" itemprop="name"><a href="/blog/2014/09/15/starting-a-blog-with-jekyll/" itemprop="url">Starting a Blog With Jekyll</a></h1>
 	<div class="entry-content" itemprop="articleBody">
 		<p>When searching where to host our team’s blog we wanted to stay close to the community that we were trying to give back to. <a href="http://pages.github.com/">Github Pages</a> immediately stood out and with the cost of $0 it’s perfect.  Github Pages allows us to keep using the same tools we use everyday in Development for Blogging.</p>
+
+<h2>Where to Start?</h2>
+
+<p>The first thing you will want to do is choose a static site generator.  To make it easy for you I’ve read through quite a bit material and the top 2 imo are:</p>
+
+<ul>
+<li>jekyll (ruby)</li>
+<li>cabin (javascript)</li>
+</ul>
+
+
+<p>Both have their advantages but since I need some material for the next Ruby Meetup we are going to start this blog with using Jekyll.</p>
 
 
 		
