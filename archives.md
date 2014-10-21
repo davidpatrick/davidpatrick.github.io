@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Archives
-permalink: /Archives/
+permalink: /archives/
 ---
 
 {% for post in site.posts  limit: 50 %}
