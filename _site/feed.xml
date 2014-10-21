@@ -5,8 +5,8 @@
     <description>Ruby, Angular, Javascript - The Exploration of One Developer</description>
     <link>http://dponrails.com/</link>
     <atom:link href="http://dponrails.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 21 Oct 2014 00:58:54 -0700</pubDate>
-    <lastBuildDate>Tue, 21 Oct 2014 00:58:54 -0700</lastBuildDate>
+    <pubDate>Tue, 21 Oct 2014 07:11:53 -0700</pubDate>
+    <lastBuildDate>Tue, 21 Oct 2014 07:11:53 -0700</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
@@ -45,15 +45,13 @@
 &amp;lt;/a&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
         <pubDate>Mon, 20 Oct 2014 17:01:00 -0700</pubDate>
-        <link>http://dponrails.com/jekyll/ruby/octopress/2014/10/20/angular-custom-filters.html</link>
-        <guid isPermaLink="true">http://dponrails.com/jekyll/ruby/octopress/2014/10/20/angular-custom-filters.html</guid>
+        <link>http://dponrails.com/angular/javascript/2014/10/20/angular-custom-filters.html</link>
+        <guid isPermaLink="true">http://dponrails.com/angular/javascript/2014/10/20/angular-custom-filters.html</guid>
         
         
-        <category>jekyll</category>
+        <category>angular</category>
         
-        <category>ruby</category>
-        
-        <category>octopress</category>
+        <category>javascript</category>
         
       </item>
     
