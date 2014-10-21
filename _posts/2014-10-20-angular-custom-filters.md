@@ -25,7 +25,7 @@ Here we are binding our custom function to our $scope variable `removeSelectedFr
 
 In our view we will have:
 
-{% highlight ruby %}
+{% highlight html %}
 <a class="friend"
    collection-repeat="friend in friends | 
    filter: removeSelectedFriends ">

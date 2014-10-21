@@ -118,11 +118,11 @@
 
 <p>In our view we will have:</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">&lt;</span><span class="n">a</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;friend&quot;</span>
-   <span class="n">collection</span><span class="o">-</span><span class="n">repeat</span><span class="o">=</span><span class="s2">&quot;friend in friends | </span>
-<span class="s2">   filter: removeSelectedFriends &quot;</span><span class="o">&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html">&lt;a class=&quot;friend&quot;
+   collection-repeat=&quot;friend in friends | 
+   filter: removeSelectedFriends &quot;&gt;
    
-<span class="o">&lt;</span><span class="sr">/a&gt;</span></code></pre></div>
+&lt;/a&gt;</code></pre></div>
 
 <p>Since we bound our function to <code>$scope.removeSelectedFriends</code>, we can now just pass in removeSelectedFriends to the filter and it will evaluate every recod in the friends collection with our custom function.</p>
 
