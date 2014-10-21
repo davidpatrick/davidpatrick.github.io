@@ -5,9 +5,57 @@
     <description>Ruby, Angular, Javascript - The Exploration of One Developer</description>
     <link>http://dponrails.com/</link>
     <atom:link href="http://dponrails.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 20 Oct 2014 23:33:40 -0700</pubDate>
-    <lastBuildDate>Mon, 20 Oct 2014 23:33:40 -0700</lastBuildDate>
+    <pubDate>Tue, 21 Oct 2014 00:58:54 -0700</pubDate>
+    <lastBuildDate>Tue, 21 Oct 2014 00:58:54 -0700</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
+    
+      <item>
+        <title>Custom Filters in Angular</title>
+        <description>&lt;p&gt;In Angular using the &lt;a href=&quot;filter&quot;&gt;https://docs.angularjs.org/api/ng/filter/filter&lt;/a&gt; in views can be pretty straight forward when wanting to search for key terms, but what about when we want to do some thing a little more involved? What about Filter that does not equal data? In this post I am going to describe how you can build a custom filter that will let us dive a little more into the data.&lt;/p&gt;
+
+&lt;h3&gt;Filtering Out Records&lt;/h3&gt;
+
+&lt;p&gt;Basically to create a custom filter, we create a function that we pass data into and return true or false.  To filter out records that don&amp;#39;t match a specific set of data we need to build a custom function that will evaluate our records and then pass that function into the filter.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;#39;s goto our &lt;code&gt;view-controller.js&lt;/code&gt; and add our custom function that will evaluate the records passed into it.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;$scope.removeSelectedFriends = function(friend) {
+  return (friend.id !== $scope.selectedFriendOneId &amp;amp;&amp;amp; friend.id !== $scope.selectedFriendTwoId);
+};
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Here we are binding our custom function to our $scope variable &lt;code&gt;removeSelectedFriends&lt;/code&gt;.  This function takes a friend object and compares it&amp;#39;s &lt;code&gt;id&lt;/code&gt; against the selected friends and returns true or false. This allows us to prevent our user from selecting the same friend twice.&lt;/p&gt;
+
+&lt;p&gt;In our view we will have:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&amp;lt;a class=&amp;quot;friend&amp;quot;
+   collection-repeat=&amp;quot;friend in friends | 
+   filter: removeSelectedFriends &amp;quot;&amp;gt;
+   
+&amp;lt;/a&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Since we bound our function to &lt;code&gt;$scope.removeSelectedFriends&lt;/code&gt;, we can now just pass in removeSelectedFriends to the filter and it will evaluate every recod in the friends collection with our custom function.&lt;/p&gt;
+
+&lt;h3&gt;Adding multiple filters&lt;/h3&gt;
+
+&lt;p&gt;I still want my users to be able to search their friends list, to add additional filters you just separate them with an additional pipe.  My final code looks something like this:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;a class=&amp;quot;friend&amp;quot;
+   collection-repeat=&amp;quot;friend in friends
+   | filter: data.search
+   | filter: removeSelectedFriends &amp;quot;&amp;gt;
+
+&amp;lt;/a&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+        <pubDate>Mon, 20 Oct 2014 17:01:00 -0700</pubDate>
+        <link>http://dponrails.com/jekyll/ruby/octopress/2014/10/20/angular-custom-filters.html</link>
+        <guid isPermaLink="true">http://dponrails.com/jekyll/ruby/octopress/2014/10/20/angular-custom-filters.html</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>ruby</category>
+        
+        <category>octopress</category>
+        
+      </item>
     
       <item>
         <title>Octopress? No Thanks.</title>
