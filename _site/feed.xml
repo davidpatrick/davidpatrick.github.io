@@ -5,8 +5,8 @@
     <description>Ruby, Angular, Javascript - The Exploration of One Developer</description>
     <link>http://dponrails.com/</link>
     <atom:link href="http://dponrails.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 21 Oct 2014 07:14:14 -0700</pubDate>
-    <lastBuildDate>Tue, 21 Oct 2014 07:14:14 -0700</lastBuildDate>
+    <pubDate>Tue, 21 Oct 2014 07:14:47 -0700</pubDate>
+    <lastBuildDate>Tue, 21 Oct 2014 07:14:47 -0700</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
@@ -26,11 +26,11 @@
 
 &lt;p&gt;In our view we will have:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&amp;lt;a class=&amp;quot;friend&amp;quot;
-   collection-repeat=&amp;quot;friend in friends | 
-   filter: removeSelectedFriends &amp;quot;&amp;gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;friend&amp;quot;&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;collection&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;repeat&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;friend in friends | &lt;/span&gt;
+&lt;span class=&quot;s2&quot;&gt;   filter: removeSelectedFriends &amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
    
-&amp;lt;/a&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/a&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Since we bound our function to &lt;code&gt;$scope.removeSelectedFriends&lt;/code&gt;, we can now just pass in removeSelectedFriends to the filter and it will evaluate every recod in the friends collection with our custom function.&lt;/p&gt;
 
