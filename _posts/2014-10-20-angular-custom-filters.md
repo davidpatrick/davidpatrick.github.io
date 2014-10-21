@@ -25,13 +25,15 @@ Here we are binding our custom function to our $scope variable `removeSelectedFr
 
 In our view we will have:
 
-```
-<a class="friend"
-   collection-repeat="friend in friends | 
-   filter: removeSelectedFriends ">
-   {{friend.name}}
+{% highlight html %}
+{% raw %}
+  <a class="friend"
+     collection-repeat="friend in friends | 
+     filter: removeSelectedFriends">
+     {{friend.name}}
 </a>
-```
+{% endraw %}
+{% endhighlight %}
 
 
 Since we bound our function to `$scope.removeSelectedFriends`, we can now just pass in removeSelectedFriends to the filter and it will evaluate every recod in the friends collection with our custom function.
@@ -39,13 +41,15 @@ Since we bound our function to `$scope.removeSelectedFriends`, we can now just p
 ### Adding multiple filters
 I still want my users to be able to search their friends list, to add additional filters you just separate them with an additional pipe.  My final code looks something like this:
 
-```
-<a class="friend"
-   collection-repeat="friend in friends
-   | filter: data.search
-   | filter: removeSelectedFriends ">
-   {{friend.name}}
+{% highlight html %}
+{% raw %}
+  <a class="friend"
+     collection-repeat="friend in friends
+     | filter: data.search
+     | filter: removeSelectedFriends">
+     {{friend.name}}
 </a>
-```
+{% endraw %}
+{% endhighlight %}
 
 
