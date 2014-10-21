@@ -5,8 +5,8 @@
     <description>Ruby, Angular, Javascript - The Exploration of One Developer</description>
     <link>http://dponrails.com/</link>
     <atom:link href="http://dponrails.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 21 Oct 2014 07:19:12 -0700</pubDate>
-    <lastBuildDate>Tue, 21 Oct 2014 07:19:12 -0700</lastBuildDate>
+    <pubDate>Tue, 21 Oct 2014 07:22:47 -0700</pubDate>
+    <lastBuildDate>Tue, 21 Oct 2014 07:22:47 -0700</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
@@ -25,13 +25,12 @@
 &lt;p&gt;Here we are binding our custom function to our $scope variable &lt;code&gt;removeSelectedFriends&lt;/code&gt;.  This function takes a friend object and compares it&amp;#39;s &lt;code&gt;id&lt;/code&gt; against the selected friends and returns true or false. This allows us to prevent our user from selecting the same friend twice.&lt;/p&gt;
 
 &lt;p&gt;In our view we will have:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&amp;lt;a class=&amp;quot;friend&amp;quot;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;a class=&amp;quot;friend&amp;quot;
    collection-repeat=&amp;quot;friend in friends | 
    filter: removeSelectedFriends &amp;quot;&amp;gt;
-   
-&amp;lt;/a&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
+&amp;lt;/a&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Since we bound our function to &lt;code&gt;$scope.removeSelectedFriends&lt;/code&gt;, we can now just pass in removeSelectedFriends to the filter and it will evaluate every recod in the friends collection with our custom function.&lt;/p&gt;
 
 &lt;h3&gt;Adding multiple filters&lt;/h3&gt;

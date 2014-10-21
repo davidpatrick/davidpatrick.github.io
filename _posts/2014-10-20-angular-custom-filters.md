@@ -25,13 +25,13 @@ Here we are binding our custom function to our $scope variable `removeSelectedFr
 
 In our view we will have:
 
-{% highlight html %}
+```
 <a class="friend"
    collection-repeat="friend in friends | 
    filter: removeSelectedFriends ">
    {{friend.name}}
 </a>
-{% endhighlight %}
+```
 
 
 Since we bound our function to `$scope.removeSelectedFriends`, we can now just pass in removeSelectedFriends to the filter and it will evaluate every recod in the friends collection with our custom function.

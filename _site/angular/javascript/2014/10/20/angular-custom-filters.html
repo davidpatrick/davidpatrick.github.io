@@ -117,13 +117,12 @@
 <p>Here we are binding our custom function to our $scope variable <code>removeSelectedFriends</code>.  This function takes a friend object and compares it&#39;s <code>id</code> against the selected friends and returns true or false. This allows us to prevent our user from selecting the same friend twice.</p>
 
 <p>In our view we will have:</p>
-
-<div class="highlight"><pre><code class="language-html" data-lang="html">&lt;a class=&quot;friend&quot;
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;a class=&quot;friend&quot;
    collection-repeat=&quot;friend in friends | 
    filter: removeSelectedFriends &quot;&gt;
-   
-&lt;/a&gt;</code></pre></div>
 
+&lt;/a&gt;
+</code></pre></div>
 <p>Since we bound our function to <code>$scope.removeSelectedFriends</code>, we can now just pass in removeSelectedFriends to the filter and it will evaluate every recod in the friends collection with our custom function.</p>
 
 <h3>Adding multiple filters</h3>
