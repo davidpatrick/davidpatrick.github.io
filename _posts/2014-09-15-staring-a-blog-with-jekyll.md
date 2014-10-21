@@ -4,7 +4,7 @@ title:  "Starting a Blog with Jekyll"
 date:   2014-09-15 14:34:25
 categories: jekyll poole ruby
 tags: featured
-image: /assets/article_images/2014-08-29-welcome-to-jekyll/desktop.jpg
+image: 'http://i.imgur.com/gVHPdME.png'
 ---
 
 When searching where to host our team’s blog we wanted to stay close to the community that we were trying to give back to. [Github Pages](http://pages.github.com/) immediately stood out and with the cost of $0 it’s perfect.  Github Pages allows us to keep using the same tools we use everyday in Development for Blogging.

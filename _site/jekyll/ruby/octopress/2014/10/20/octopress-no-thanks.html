@@ -7,7 +7,7 @@
   <!-- (1) force latest IE rendering engine: bit.ly/1c8EiC9 -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <title>Starting a Blog with Jekyll</title>
+  <title>Octopress? No Thanks.</title>
   <meta name="description" content="Ruby, Angular, Javascript - The Exploration of One Developer" />
 
   <meta name="HandheldFriendly" content="True" />
@@ -15,7 +15,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-  <link rel="canonical" href="http://dponrails.com/jekyll/poole/ruby/2014/09/15/staring-a-blog-with-jekyll.html">
+  <link rel="canonical" href="http://dponrails.com/jekyll/ruby/octopress/2014/10/20/octopress-no-thanks.html">
 
   <link rel="shortcut icon" href="/assets/images/favicon.ico">
 <!--  <link rel="stylesheet" href=""> -->
@@ -42,16 +42,16 @@
       <article class="post">
         
         <div class="article-image">
-          <div class="post-image-image" style="background-image: url(http://i.imgur.com/gVHPdME.png)">
+          <div class="post-image-image" style="background-image: url(http://i.imgur.com/8gtUvb1.jpg)">
             Article Image
           </div>
           <div class="post-meta">
-            <h1 class="post-title">Starting a Blog with Jekyll</h1>
+            <h1 class="post-title">Octopress? No Thanks.</h1>
             <div class="cf post-meta-text">
               <div class="author-image" style="background-image: url(/assets/images/author.jpg)">Blog Logo</div>
               <h4 class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person">David Patrick</h4>
               on
-              <time datetime="2014-09-15 07:34">15 Sep 2014</time>
+              <time datetime="2014-10-20 15:00">20 Oct 2014</time>
               <!-- , tagged on <span class="post-tag-">, <a href="/tag/"></a></span> -->
             </div>
             <div style="text-align:center">
@@ -103,54 +103,28 @@
             <span class="post-reading-time"></span> read
           </div>
           <a name="topofpage"></a>
-          <p>When searching where to host our team’s blog we wanted to stay close to the community that we were trying to give back to. <a href="http://pages.github.com/">Github Pages</a> immediately stood out and with the cost of $0 it’s perfect.  Github Pages allows us to keep using the same tools we use everyday in Development for Blogging.</p>
+          <h3>Keep it Simple Stupid</h3>
 
-<h2>Where to Start?</h2>
+<p>When I went down the path of using Jekyll for blogging, I really liked how in control I was of my content.  The source was exactly as I had wrote it, WYWIWYG (what you write is what you get), and every post I wrote in markdown would be pushed to GitHub in its original format.  I was able to edit posts easily from any device right on GitHub.  However, when I switched over to Octopress, for the fancy plugins, I would lose that flexibility and it would ultimately bite me in the ass.</p>
 
-<p>The first thing you will want to do is choose a static site generator.  To make it easy for you I’ve read through quite a bit material and the top 2 imo are:</p>
+<h3>Managing Two Repos</h3>
 
-<ul>
-<li>jekyll (ruby)</li>
-<li>cabin (javascript)</li>
-</ul>
+<p>Using plain jane Jekyll you push markdown files to your GitHub Pages repo and GitHub knows how to do the rest to generate viewable HTML files.  Octopress is sort of counter intuitive, in that it generates HTML out of your Markdown files and puts that into a deploy folder that will be pushed to your GitHub pages repo.  You then have to create a second repo for the source code Octopress uses to generate the HTML.  Now you are managing two repos for the same content.</p>
 
-<p>Both have their advantages but since I need some material for the next Ruby Meetup we are going to start this blog with using Jekyll.  </p>
+<p>Since Octopress has to generate HTML files out of your markdown, this makes editing or adding new posts more cumbersome.  You can no longer use the power of markdown or liquit templates on the fly. No more going to your GitHub repo and editing the files remotely, or adding files remotely.  You now have clone your Octopress source repo and generate the content from there and deploy from there.... </p>
 
-<h2>Getting Started</h2>
+<p>Needless to say, I am no longer using Octopress.</p>
 
-<p><a href="https://pages.github.com/">Github Pages</a> is straight forward and easy to follow.</p>
+<h3>Conclusion</h3>
 
-<p><a href="http://jekyllrb.com/">Jekyll</a>  is even easier to install
- <code>gem install jekyll</code></p>
-
-<p>There are a ton of resources and tools from here to get you started with Jekyll.  One of the most common is <a href="http://octopress.org/">Octopress</a>.  But I like starting from something even more basic.  That’s where I found <a href="https://github.com/poole/poole">Poole</a>. </p>
-
-<p>Even more so let’s start from one of its themes <a href="https://github.com/poole/hyde">Hyde</a>. Download the <a href="https://github.com/poole/hyde/archive/master.zip">source code</a> and extract it into our new project.</p>
-
-<p>Let’s take a look at the file structure.  You will see some files/folders with underscores.  Every thing without an underscore will get copied into to the _site folder on build.</p>
-
-<p>If you open up /_layouts/post.html  you will see handlebars used for injecting content.  This is using the <a href="http://liquidmarkup.org/">Liquid Markup Language</a>. </p>
-
-<h3>Configuring Poole</h3>
-
-<p>There are few things we will need to do configure Poole</p>
-
-<ul>
-<li><p>First, unelss you are using a custom domain is to remove the CNAME file, otherwise edit it with your domain.</p></li>
-<li><p>Second, let’s set customize the _config.yml to fit our blog.</p></li>
-<li><p>Third, remove the default blog posts under the _posts folder and write your our first post.</p></li>
-</ul>
-
-<p>That’s it! Now run <code>jekyll build</code> Commit and push!</p>
-
-<p>You can add <a href="https://help.disqus.com/customer/portal/articles/472138-jekyll-installation-instructions">Disqus Comments</a> and customize it a ton of different ways. Good luck</p>
+<p>Now I know there are all sorts of ways around the described problem above, but it&#39;s so much overhead for such a little gain.  Jekyll is lightweight, fast and easy.   Why complicate it with such a bloated framework like Octopress? The answer is, you shouldn&#39;t.</p>
 
         </section>
         <footer class="post-footer">
           <section class="share">
             
               
-                <a class="icon-twitter" href="http://twitter.com/share?text=Starting+a+Blog+with+Jekyll&amp;url=http://dponrails.com/jekyll/poole/ruby/2014/09/15/staring-a-blog-with-jekyll"
+                <a class="icon-twitter" href="http://twitter.com/share?text=Octopress%3F+No+Thanks.&amp;url=http://dponrails.com/jekyll/ruby/octopress/2014/10/20/octopress-no-thanks"
                   onclick="window.open(this.href, 'twitter-share', 'width=550,height=255');return false;">
                 <i class="fa fa-twitter"></i><span class="hidden">twitter</span>
                 </a>
@@ -168,7 +142,7 @@
               <h4>David Patrick</h4>
               <p class="bio"></p>
               <hr>
-              <p class="published">Published <time datetime="2014-09-15 07:34">15 Sep 2014</time></p>
+              <p class="published">Published <time datetime="2014-10-20 15:00">20 Oct 2014</time></p>
             </section>
           </div>
           
