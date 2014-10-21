@@ -6,7 +6,7 @@ categories: angular javascript
 image: 'http://i.imgur.com/mPoMR6l.jpg'
 ---
 
-In Angular using the [https://docs.angularjs.org/api/ng/filter/filter](filter) in views can be pretty straight forward when wanting to search for key terms, but what about when we want to do some thing a little more involved? What about Filter that does not equal data? In this post I am going to describe how you can build a custom filter that will let us dive a little more into the data.
+In Angular using the [filter](https://docs.angularjs.org/api/ng/filter/filter) in views can be pretty straight forward when wanting to search for key terms, but what about when we want to do some thing a little more involved? What about Filter that does not equal data? In this post I am going to describe how you can build a custom filter that will let us dive a little more into the data.
 
 
 ### Filtering Out Records
