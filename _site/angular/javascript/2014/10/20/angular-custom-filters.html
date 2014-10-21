@@ -103,17 +103,18 @@
             <span class="post-reading-time"></span> read
           </div>
           <a name="topofpage"></a>
-          <p>In Angular using the <a href="filter">https://docs.angularjs.org/api/ng/filter/filter</a> in views can be pretty straight forward when wanting to search for key terms, but what about when we want to do some thing a little more involved? What about Filter that does not equal data? In this post I am going to describe how you can build a custom filter that will let us dive a little more into the data.</p>
+          <p>In Angular using the <a href="https://docs.angularjs.org/api/ng/filter/filter">filter</a> in views can be pretty straight forward when wanting to search for key terms, but what about when we want to do some thing a little more involved? What about Filter that does not equal data? In this post I am going to describe how you can build a custom filter that will let us dive a little more into the data.</p>
 
 <h3>Filtering Out Records</h3>
 
 <p>Basically to create a custom filter, we create a function that we pass data into and return true or false.  To filter out records that don&#39;t match a specific set of data we need to build a custom function that will evaluate our records and then pass that function into the filter.</p>
 
 <p>Let&#39;s goto our <code>view-controller.js</code> and add our custom function that will evaluate the records passed into it.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">$scope.removeSelectedFriends = function(friend) {
-  return (friend.id !== $scope.selectedFriendOneId &amp;&amp; friend.id !== $scope.selectedFriendTwoId);
-};
-</code></pre></div>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$scope</span><span class="p">.</span><span class="nx">removeSelectedFriends</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">friend</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span><span class="nx">friend</span><span class="p">.</span><span class="nx">id</span> <span class="o">!==</span> <span class="nx">$scope</span><span class="p">.</span><span class="nx">selectedFriendOneId</span> <span class="o">&amp;&amp;</span> <span class="nx">friend</span><span class="p">.</span><span class="nx">id</span> <span class="o">!==</span> <span class="nx">$scope</span><span class="p">.</span><span class="nx">selectedFriendTwoId</span><span class="p">);</span>
+<span class="p">};</span></code></pre></div>
+
 <p>Here we are binding our custom function to our $scope variable <code>removeSelectedFriends</code>.  This function takes a friend object and compares it&#39;s <code>id</code> against the selected friends and returns true or false. This allows us to prevent our user from selecting the same friend twice.</p>
 
 <p>In our view we will have:</p>

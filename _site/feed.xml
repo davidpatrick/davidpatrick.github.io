@@ -5,23 +5,24 @@
     <description>Ruby, Angular, Javascript - The Exploration of One Developer</description>
     <link>http://dponrails.com/</link>
     <atom:link href="http://dponrails.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 21 Oct 2014 07:35:12 -0700</pubDate>
-    <lastBuildDate>Tue, 21 Oct 2014 07:35:12 -0700</lastBuildDate>
+    <pubDate>Tue, 21 Oct 2014 08:13:23 -0700</pubDate>
+    <lastBuildDate>Tue, 21 Oct 2014 08:13:23 -0700</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
         <title>Custom Filters in Angular</title>
-        <description>&lt;p&gt;In Angular using the &lt;a href=&quot;filter&quot;&gt;https://docs.angularjs.org/api/ng/filter/filter&lt;/a&gt; in views can be pretty straight forward when wanting to search for key terms, but what about when we want to do some thing a little more involved? What about Filter that does not equal data? In this post I am going to describe how you can build a custom filter that will let us dive a little more into the data.&lt;/p&gt;
+        <description>&lt;p&gt;In Angular using the &lt;a href=&quot;https://docs.angularjs.org/api/ng/filter/filter&quot;&gt;filter&lt;/a&gt; in views can be pretty straight forward when wanting to search for key terms, but what about when we want to do some thing a little more involved? What about Filter that does not equal data? In this post I am going to describe how you can build a custom filter that will let us dive a little more into the data.&lt;/p&gt;
 
 &lt;h3&gt;Filtering Out Records&lt;/h3&gt;
 
 &lt;p&gt;Basically to create a custom filter, we create a function that we pass data into and return true or false.  To filter out records that don&amp;#39;t match a specific set of data we need to build a custom function that will evaluate our records and then pass that function into the filter.&lt;/p&gt;
 
 &lt;p&gt;Let&amp;#39;s goto our &lt;code&gt;view-controller.js&lt;/code&gt; and add our custom function that will evaluate the records passed into it.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;$scope.removeSelectedFriends = function(friend) {
-  return (friend.id !== $scope.selectedFriendOneId &amp;amp;&amp;amp; friend.id !== $scope.selectedFriendTwoId);
-};
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;$scope&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;removeSelectedFriends&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;friend&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;friend&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$scope&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;selectedFriendOneId&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;friend&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$scope&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;selectedFriendTwoId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 &lt;p&gt;Here we are binding our custom function to our $scope variable &lt;code&gt;removeSelectedFriends&lt;/code&gt;.  This function takes a friend object and compares it&amp;#39;s &lt;code&gt;id&lt;/code&gt; against the selected friends and returns true or false. This allows us to prevent our user from selecting the same friend twice.&lt;/p&gt;
 
 &lt;p&gt;In our view we will have:&lt;/p&gt;

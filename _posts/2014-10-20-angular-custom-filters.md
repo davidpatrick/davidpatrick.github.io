@@ -15,11 +15,14 @@ Basically to create a custom filter, we create a function that we pass data into
 
 Let's goto our `view-controller.js` and add our custom function that will evaluate the records passed into it.
 
-```
-$scope.removeSelectedFriends = function(friend) {
-  return (friend.id !== $scope.selectedFriendOneId && friend.id !== $scope.selectedFriendTwoId);
+{% highlight javascript %}
+{% raw %}
+  $scope.removeSelectedFriends = function(friend) {
+    return (friend.id !== $scope.selectedFriendOneId && friend.id !== $scope.selectedFriendTwoId);
 };
-```
+{% endraw %}
+{% endhighlight %}
+
 Here we are binding our custom function to our $scope variable `removeSelectedFriends`.  This function takes a friend object and compares it's `id` against the selected friends and returns true or false. This allows us to prevent our user from selecting the same friend twice.
 
 
