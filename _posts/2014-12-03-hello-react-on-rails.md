@@ -5,6 +5,8 @@ date:   2014-12-03 04:27:00
 categories: react.js javascript
 image: 'http://i.imgur.com/hG49emr.jpg'
 ---
+React.js
+
 #Installing React.js
 
 1. Add the gem to your gem file
@@ -48,7 +50,7 @@ First we are going to want to create our first React component.  First create  `
         return (
           <div>
             <h3>
-              <span className="full-title">{welcome} { this.props.name }</span>
+              {welcome} { this.props.name }
             </h3>
           </div>
         );
