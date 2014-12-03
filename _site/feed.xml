@@ -5,9 +5,77 @@
     <description>Ruby, Angular, Javascript - The Exploration of One Developer</description>
     <link>http://dponrails.com/</link>
     <atom:link href="http://dponrails.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 21 Oct 2014 08:13:23 -0700</pubDate>
-    <lastBuildDate>Tue, 21 Oct 2014 08:13:23 -0700</lastBuildDate>
-    <generator>Jekyll v2.4.0</generator>
+    <pubDate>Wed, 03 Dec 2014 14:47:19 -0800</pubDate>
+    <lastBuildDate>Wed, 03 Dec 2014 14:47:19 -0800</lastBuildDate>
+    <generator>Jekyll v2.5.1</generator>
+    
+      <item>
+        <title>Hello, React on Rails!</title>
+        <description>&lt;h1&gt;Installing React.js&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Add the gem to your gem file&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;code&gt;gem &amp;#39;react-rails&amp;#39;, &amp;#39;~&amp;gt; 1.0.0.pre&amp;#39;, github: &amp;#39;reactjs/react-rails&amp;#39;&lt;/code&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Run the installation script&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;code&gt;rails g react:install&lt;/code&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt; Include the following in your application.js&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;react&lt;/span&gt;
+&lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;react_ujs&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h1&gt;Structuring React.js Files&lt;/h1&gt;
+
+&lt;p&gt;Add the following into your application.js&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;//= require_tree ./react/components&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;This will allow us to put our react components in &lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;/app/assets/javascripts/react/components&lt;/code&gt;&lt;/p&gt;
+
+&lt;h1&gt;Implementing React.js&lt;/h1&gt;
+
+&lt;p&gt;First we are going to want to create our first React component.  First create  &lt;code&gt;/app/assets/javascripts/react/hello_world.js.jsx&lt;/code&gt;.  Inside of this file lets paste the following code&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/** @jsx React.DOM */&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;HelloMessage&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;React&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createClass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;welcome&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Hello, &amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+          &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;h3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+              &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;span&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;className&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;full-title&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;welcome&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;props&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;/span&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;/h3&amp;gt;&lt;/span&gt;
+          &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;/div&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Implementing react components in our rails view is very straightforward.  Thanks to the react-rails gem it gives us a nice view helper &lt;code&gt;&amp;lt;%=react_component(&amp;#39;HelloMessage&amp;#39;, name: &amp;#39;world!&amp;#39;)%&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;And that&amp;#39;s it!  Save your changes and refresh the page and you should have your first React Component!&lt;/p&gt;
+</description>
+        <pubDate>Tue, 02 Dec 2014 20:27:00 -0800</pubDate>
+        <link>http://dponrails.com/react.js/javascript/2014/12/02/hello-react-on-rails.html</link>
+        <guid isPermaLink="true">http://dponrails.com/react.js/javascript/2014/12/02/hello-react-on-rails.html</guid>
+        
+        
+        <category>react.js</category>
+        
+        <category>javascript</category>
+        
+      </item>
     
       <item>
         <title>Custom Filters in Angular</title>
