@@ -8,7 +8,7 @@
     font-style: italic; }
   .highlight .err {
     color: #a61717;
-    background-color: #1d1e19; }
+    background-color: #eae9ff; }
   .highlight .k {
     font-weight: bold; }
   .highlight .o {
@@ -28,10 +28,10 @@
     font-style: italic; }
   .highlight .gd {
     color: #000;
-    background-color: #fdd; }
+    background-color: #eae9ff; }
   .highlight .gd .x {
     color: #000;
-    background-color: #faa; }
+    background-color: #eae9ff; }
   .highlight .ge {
     font-style: italic; }
   .highlight .gr {
@@ -40,10 +40,10 @@
     color: #999; }
   .highlight .gi {
     color: #000;
-    background-color: #dfd; }
+    background-color: #eae9ff; }
   .highlight .gi .x {
     color: #000;
-    background-color: #afa; }
+    background-color: #eae9ff; }
   .highlight .go {
     color: #888; }
   .highlight .gp {

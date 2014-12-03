@@ -5,13 +5,13 @@
     <description>Ruby, Angular, Javascript - The Exploration of One Developer</description>
     <link>http://dponrails.com/</link>
     <atom:link href="http://dponrails.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 03 Dec 2014 15:00:30 -0800</pubDate>
-    <lastBuildDate>Wed, 03 Dec 2014 15:00:30 -0800</lastBuildDate>
+    <pubDate>Wed, 03 Dec 2014 15:14:58 -0800</pubDate>
+    <lastBuildDate>Wed, 03 Dec 2014 15:14:58 -0800</lastBuildDate>
     <generator>Jekyll v2.5.1</generator>
     
       <item>
         <title>Hello, React on Rails!</title>
-        <description>&lt;p&gt;React.js&lt;/p&gt;
+        <description>&lt;p&gt;React.JS is a JavaScript library that allows us to build reuseable composable components.  It is powerful, fast, and really easy to get started with.  If you want to know more reasons why you should read any further check out &lt;a href=&quot;http://facebook.github.io/react/docs/why-react.html&quot;&gt;Why React?&lt;/a&gt; and &lt;a href=&quot;http://www.syncano.com/reactjs-reasons-why-part-1/&quot;&gt;6 Reasons Why We Love React.js&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1&gt;Installing React.js&lt;/h1&gt;
 

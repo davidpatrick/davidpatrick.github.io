@@ -5,7 +5,7 @@ date:   2014-12-03 04:27:00
 categories: react.js javascript
 image: 'http://i.imgur.com/hG49emr.jpg'
 ---
-React.js
+React.JS is a JavaScript library that allows us to build reuseable composable components.  It is powerful, fast, and really easy to get started with.  If you want to know more reasons why you should read any further check out [Why React?](http://facebook.github.io/react/docs/why-react.html) and [6 Reasons Why We Love React.js](http://www.syncano.com/reactjs-reasons-why-part-1/)
 
 #Installing React.js
 
