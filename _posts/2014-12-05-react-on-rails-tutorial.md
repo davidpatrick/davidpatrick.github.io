@@ -66,7 +66,4 @@ First we are going to want to create our first React component.  First create  `
 
 Implementing react components in our rails view is very straightforward.  Thanks to the react-rails gem it gives us a nice view helper `<%=react_component('HelloMessage', name: 'world!')%>`
 
-And that's it!  Save your changes and refresh the page and you should have your first React Component!
-    
-    
-  
+And that's it!  Save your changes and refresh the page and you should have your first React Component!  Now you are ready to unleash the power of React.js!

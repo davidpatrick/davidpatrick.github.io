@@ -5,8 +5,8 @@
     <description>Ruby, Angular, Javascript - The Exploration of One Developer</description>
     <link>http://dponrails.com/</link>
     <atom:link href="http://dponrails.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 08 Dec 2014 09:33:57 -0800</pubDate>
-    <lastBuildDate>Mon, 08 Dec 2014 09:33:57 -0800</lastBuildDate>
+    <pubDate>Mon, 08 Dec 2014 09:36:57 -0800</pubDate>
+    <lastBuildDate>Mon, 08 Dec 2014 09:36:57 -0800</lastBuildDate>
     <generator>Jekyll v2.5.1</generator>
     
       <item>
@@ -156,7 +156,7 @@
 
 &lt;p&gt;Implementing react components in our rails view is very straightforward.  Thanks to the react-rails gem it gives us a nice view helper &lt;code&gt;&amp;lt;%=react_component(&amp;#39;HelloMessage&amp;#39;, name: &amp;#39;world!&amp;#39;)%&amp;gt;&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;And that&amp;#39;s it!  Save your changes and refresh the page and you should have your first React Component!&lt;/p&gt;
+&lt;p&gt;And that&amp;#39;s it!  Save your changes and refresh the page and you should have your first React Component!  Now you are ready to unleash the power of React.js!&lt;/p&gt;
 </description>
         <pubDate>Fri, 05 Dec 2014 06:27:00 -0800</pubDate>
         <link>http://dponrails.com/react.js/javascript/2014/12/05/react-on-rails-tutorial.html</link>
