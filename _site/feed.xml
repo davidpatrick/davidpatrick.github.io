@@ -5,8 +5,8 @@
     <description>Ruby, Angular, Javascript - The Exploration of One Developer</description>
     <link>http://dponrails.com/</link>
     <atom:link href="http://dponrails.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 08 Dec 2014 09:29:42 -0800</pubDate>
-    <lastBuildDate>Mon, 08 Dec 2014 09:29:42 -0800</lastBuildDate>
+    <pubDate>Mon, 08 Dec 2014 09:33:19 -0800</pubDate>
+    <lastBuildDate>Mon, 08 Dec 2014 09:33:19 -0800</lastBuildDate>
     <generator>Jekyll v2.5.1</generator>
     
       <item>
@@ -99,7 +99,9 @@
     
       <item>
         <title>React on Rails Tutorial</title>
-        <description>&lt;p&gt;React.JS is a JavaScript library that allows us to build reuseable components.  It is powerful, fast, and really easy to get started with. In contrast to full blown front-end MVC (Model View Controller) frameworks like Angular, Ember, and Backbone; React.js is only the view layer and actually can be used in any of those frameworks.  The learning curve for React.js isn&amp;#39;t as steep as it is with MVC frameworks. With React.js we can replace particular components on our site, without having to rewire the whole front-end.  This makes it perfect for Rails. To learn more about React.js and why you should consider it further check out &lt;a href=&quot;http://scotch.io/tutorials/javascript/learning-react-getting-started-and-concepts&quot;&gt;Learning React.js&lt;/a&gt; and &lt;a href=&quot;http://www.syncano.com/reactjs-reasons-why-part-1/&quot;&gt;6 Reasons Why We Love React.js&lt;/a&gt;&lt;/p&gt;
+        <description>&lt;p&gt;React.JS is a JavaScript library that allows us to build reuseable components.  It is powerful, fast, and really easy to get started with. In contrast to full blown front-end MVC (Model View Controller) frameworks like Angular, Ember, and Backbone; React.js is only the view layer and actually can be used in any of those frameworks.  The learning curve for React.js isn&amp;#39;t as steep as it is with MVC frameworks. With React.js we can replace particular components on our site, without having to rewire the whole front-end.  This makes it perfect for Rails.  Getting it setup on your Rails app is a lot easier than you might think too, in this post we will walk through that process.&lt;/p&gt;
+
+&lt;p&gt;To learn more about React.js and why you should consider it further check out &lt;a href=&quot;http://scotch.io/tutorials/javascript/learning-react-getting-started-and-concepts&quot;&gt;Learning React.js&lt;/a&gt; and &lt;a href=&quot;http://www.syncano.com/reactjs-reasons-why-part-1/&quot;&gt;6 Reasons Why We Love React.js&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2&gt;Installing React.js&lt;/h2&gt;
 
