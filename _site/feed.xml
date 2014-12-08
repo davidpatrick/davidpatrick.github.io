@@ -5,12 +5,12 @@
     <description>Ruby, Angular, Javascript - The Exploration of One Developer</description>
     <link>http://dponrails.com/</link>
     <atom:link href="http://dponrails.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 08 Dec 2014 02:07:37 -0800</pubDate>
-    <lastBuildDate>Mon, 08 Dec 2014 02:07:37 -0800</lastBuildDate>
+    <pubDate>Mon, 08 Dec 2014 02:18:11 -0800</pubDate>
+    <lastBuildDate>Mon, 08 Dec 2014 02:18:11 -0800</lastBuildDate>
     <generator>Jekyll v2.5.1</generator>
     
       <item>
-        <title>Angular + Mailchimp Landing Page </title>
+        <title>Creating a Launch Page with Angular + Mailchimp</title>
         <description>&lt;h1&gt;Using Angular &amp;amp; Mailchimp for your Launch Page&lt;/h1&gt;
 
 &lt;p&gt;This tutorial we are going to create a landing page for our potential customers to fill in their email, using HTML, Angular, and Mailchimp.  The resources available to Angular developers is amazing. We will be using an &lt;a href=&quot;https://github.com/keithio/angular-mailchimp&quot;&gt;Angular Module for Mailchimp&lt;/a&gt;. If you are familair with Ruby on Rails, Angular Modules are very much like Ruby Gems.&lt;/p&gt;
@@ -82,11 +82,13 @@
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;email&amp;quot;&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;form-control&amp;quot;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;exampleInputEmail2&amp;quot;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;placeholder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Enter email&amp;quot;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ng&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;mailchimp.email&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;button&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;submit&amp;quot;&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;btn btn-info&amp;quot;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ng&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;disabled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;MailchimpSubscriptionForm.$invalid&amp;quot;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ng&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;click&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;addSubscription(mailchimp)&amp;quot;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;submit&amp;quot;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;SIGN UP&amp;quot;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;disabled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;disabled&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Submit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;/button&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;That&amp;#39;s it!  You are good to go.  This page can not be tested by simply opening up the file, it needs to be served to test it.  I am using Jekyll to run a local webserver, which is what Github pages uses, which will be the hosting platform for this landing page.  If you want to know more about Jekyll please check my first blog post about &lt;a href=&quot;http://dponrails.com/jekyll/poole/ruby/2014/09/15/staring-a-blog-with-jekyll.html&quot;&gt;starting a blog&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;That&amp;#39;s it!  You are good to go.  This page can not be tested by simply opening up the file, it needs to be served to test it.  I am using Jekyll to run a local webserver, which is what Github pages uses, which will be the hosting platform for this landing page.  If you want to know more about Jekyll please check my first blog post about &lt;a href=&quot;http://dponrails.com/jekyll/poole/ruby/2014/09/15/staring-a-blog-with-jekyll.html&quot;&gt;starting a blog&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;You can view the code for this tutorial at &lt;a href=&quot;https://github.com/davidpatrick/angular-mailchimp-landing&quot;&gt;https://github.com/davidpatrick/angular-mailchimp-landing&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 07 Dec 2014 17:27:00 -0800</pubDate>
-        <link>http://dponrails.com/angular/javascript/2014/12/07/angular-mailchimp-landing-page.html</link>
-        <guid isPermaLink="true">http://dponrails.com/angular/javascript/2014/12/07/angular-mailchimp-landing-page.html</guid>
+        <link>http://dponrails.com/angular/javascript/2014/12/07/creating-a-launch-page-with-angular-mailchimp.html</link>
+        <guid isPermaLink="true">http://dponrails.com/angular/javascript/2014/12/07/creating-a-launch-page-with-angular-mailchimp.html</guid>
         
         
         <category>angular</category>
