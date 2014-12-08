@@ -5,8 +5,8 @@
     <description>Ruby, Angular, Javascript - The Exploration of One Developer</description>
     <link>http://dponrails.com/</link>
     <atom:link href="http://dponrails.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 08 Dec 2014 09:36:57 -0800</pubDate>
-    <lastBuildDate>Mon, 08 Dec 2014 09:36:57 -0800</lastBuildDate>
+    <pubDate>Mon, 08 Dec 2014 10:05:16 -0800</pubDate>
+    <lastBuildDate>Mon, 08 Dec 2014 10:05:16 -0800</lastBuildDate>
     <generator>Jekyll v2.5.1</generator>
     
       <item>
@@ -105,21 +105,16 @@
 
 &lt;h2&gt;Installing React.js&lt;/h2&gt;
 
-&lt;ol&gt;
-&lt;li&gt;Add the gem to your gem file&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;Add the gem to your gem file&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;gem &amp;#39;react-rails&amp;#39;, &amp;#39;~&amp;gt; 1.0.0.pre&amp;#39;, github: &amp;#39;reactjs/react-rails&amp;#39;&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;react-rails&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;~&amp;gt; 1.0.0.pre&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;github&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;reactjs/react-rails&amp;#39;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  
 
-&lt;ol&gt;
-&lt;li&gt;Run the installation script&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;Run the installation script&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;rails g react:install&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rails&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;g&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;react&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;install&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;ol&gt;
-&lt;li&gt; Include the following in your application.js&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;Include the following in your application.js&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;react&lt;/span&gt;
 &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;react_ujs&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -128,15 +123,15 @@
 
 &lt;p&gt;Add the following into your application.js&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;//= require_tree ./react/components&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;require_tree&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;/react&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;components&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;This will allow us to put our react components in &lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;/app/assets/javascripts/react/components&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;sr&quot;&gt;/app/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;assets&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;javascripts&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;react&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;components&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h2&gt;Implementing React.js&lt;/h2&gt;
 
-&lt;p&gt;First we are going to want to create our first React component.  First create  &lt;code&gt;/app/assets/javascripts/react/hello_world.js.jsx&lt;/code&gt;.  Inside of this file lets paste the following code&lt;/p&gt;
+&lt;p&gt;Creating out first React component is easy.  Create the following file &lt;code&gt;/app/assets/javascripts/react/hello_world.js.jsx&lt;/code&gt;.  Inside of this file let&amp;#39;s write the following code.&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/** @jsx React.DOM */&lt;/span&gt;
 
@@ -154,9 +149,9 @@
       &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Implementing react components in our rails view is very straightforward.  Thanks to the react-rails gem it gives us a nice view helper &lt;code&gt;&amp;lt;%=react_component(&amp;#39;HelloMessage&amp;#39;, name: &amp;#39;world!&amp;#39;)%&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Implementing react components in our rails view is very straightforward, and thanks to the react-rails gem it gives us a nice view helper called react&lt;em&gt;component.  To lay down our react component all we have to do is add the following to our view `&amp;lt;%=react&lt;/em&gt;component(&amp;#39;HelloMessage&amp;#39;, name: &amp;#39;world!&amp;#39;)%&amp;gt;`&lt;/p&gt;
 
-&lt;p&gt;And that&amp;#39;s it!  Save your changes and refresh the page and you should have your first React Component!  Now you are ready to unleash the power of React.js!&lt;/p&gt;
+&lt;p&gt;That&amp;#39;s it!  Save your changes and refresh the page and you should have your first React Component!  Now you are ready to unleash the power of React.js!&lt;/p&gt;
 </description>
         <pubDate>Fri, 05 Dec 2014 06:27:00 -0800</pubDate>
         <link>http://dponrails.com/react.js/javascript/2014/12/05/react-on-rails-tutorial.html</link>

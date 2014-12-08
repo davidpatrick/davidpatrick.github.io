@@ -109,21 +109,16 @@
 
 <h2>Installing React.js</h2>
 
-<ol>
-<li>Add the gem to your gem file</li>
-</ol>
+<p>Add the gem to your gem file</p>
 
-<p><code>gem &#39;react-rails&#39;, &#39;~&gt; 1.0.0.pre&#39;, github: &#39;reactjs/react-rails&#39;</code></p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">gem</span> <span class="s1">&#39;react-rails&#39;</span><span class="p">,</span> <span class="s1">&#39;~&gt; 1.0.0.pre&#39;</span><span class="p">,</span> <span class="ss">github</span><span class="p">:</span> <span class="s1">&#39;reactjs/react-rails&#39;</span></code></pre></div>
+  
 
-<ol>
-<li>Run the installation script</li>
-</ol>
+<p>Run the installation script</p>
 
-<p><code>rails g react:install</code></p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">g</span> <span class="ss">react</span><span class="p">:</span><span class="n">install</span></code></pre></div>
 
-<ol>
-<li> Include the following in your application.js</li>
-</ol>
+<p>Include the following in your application.js</p>
 
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="sr">//</span><span class="o">=</span> <span class="nb">require</span> <span class="n">react</span>
 <span class="sr">//</span><span class="o">=</span> <span class="nb">require</span> <span class="n">react_ujs</span></code></pre></div>
@@ -132,15 +127,15 @@
 
 <p>Add the following into your application.js</p>
 
-<p><code>//= require_tree ./react/components</code></p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="sr">//</span><span class="o">=</span> <span class="n">require_tree</span> <span class="o">.</span><span class="n">/react</span><span class="o">/</span><span class="n">components</span></code></pre></div>
 
 <p>This will allow us to put our react components in </p>
 
-<p><code>/app/assets/javascripts/react/components</code></p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="sr">/app/</span><span class="n">assets</span><span class="o">/</span><span class="n">javascripts</span><span class="o">/</span><span class="n">react</span><span class="o">/</span><span class="n">components</span></code></pre></div>
 
 <h2>Implementing React.js</h2>
 
-<p>First we are going to want to create our first React component.  First create  <code>/app/assets/javascripts/react/hello_world.js.jsx</code>.  Inside of this file lets paste the following code</p>
+<p>Creating out first React component is easy.  Create the following file <code>/app/assets/javascripts/react/hello_world.js.jsx</code>.  Inside of this file let&#39;s write the following code.</p>
 
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="cm">/** @jsx React.DOM */</span>
 
@@ -158,9 +153,9 @@
       <span class="p">}</span>
     <span class="p">});</span></code></pre></div>
 
-<p>Implementing react components in our rails view is very straightforward.  Thanks to the react-rails gem it gives us a nice view helper <code>&lt;%=react_component(&#39;HelloMessage&#39;, name: &#39;world!&#39;)%&gt;</code></p>
+<p>Implementing react components in our rails view is very straightforward, and thanks to the react-rails gem it gives us a nice view helper called react<em>component.  To lay down our react component all we have to do is add the following to our view `&lt;%=react</em>component(&#39;HelloMessage&#39;, name: &#39;world!&#39;)%&gt;`</p>
 
-<p>And that&#39;s it!  Save your changes and refresh the page and you should have your first React Component!  Now you are ready to unleash the power of React.js!</p>
+<p>That&#39;s it!  Save your changes and refresh the page and you should have your first React Component!  Now you are ready to unleash the power of React.js!</p>
 
         </section>
         <footer class="post-footer">

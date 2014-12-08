@@ -13,16 +13,17 @@ To learn more about React.js and why you should consider it further check out [L
 
 ##Installing React.js
 
-1. Add the gem to your gem file
+Add the gem to your gem file
+{% highlight ruby %}
+gem 'react-rails', '~> 1.0.0.pre', github: 'reactjs/react-rails'
+{% endhighlight %}  
 
-  `gem 'react-rails', '~> 1.0.0.pre', github: 'reactjs/react-rails'`
+Run the installation script
+{% highlight ruby %}
+rails g react:install
+{% endhighlight %}
 
-2. Run the installation script
-
-  `rails g react:install`
-
-3.  Include the following in your application.js
-
+Include the following in your application.js
 {% highlight ruby %}
 //= require react
 //= require react_ujs
@@ -32,16 +33,18 @@ To learn more about React.js and why you should consider it further check out [L
 #Structuring React.js Files
 
 Add the following into your application.js
-
-  `//= require_tree ./react/components`
+{% highlight ruby %}
+//= require_tree ./react/components
+{% endhighlight %}
 
 This will allow us to put our react components in 
-
-  `/app/assets/javascripts/react/components`
+{% highlight ruby %}
+/app/assets/javascripts/react/components
+{% endhighlight %}
 
 ##Implementing React.js
 
-First we are going to want to create our first React component.  First create  `/app/assets/javascripts/react/hello_world.js.jsx`.  Inside of this file lets paste the following code
+Creating out first React component is easy.  Create the following file `/app/assets/javascripts/react/hello_world.js.jsx`.  Inside of this file let's write the following code.
 
   {% highlight javascript %}
   {% raw %}
@@ -64,6 +67,6 @@ First we are going to want to create our first React component.  First create  `
   {% endhighlight %}
 
 
-Implementing react components in our rails view is very straightforward.  Thanks to the react-rails gem it gives us a nice view helper `<%=react_component('HelloMessage', name: 'world!')%>`
+Implementing react components in our rails view is very straightforward, and thanks to the react-rails gem it gives us a nice view helper called react_component.  To lay down our react component all we have to do is add the following to our view `<%=react_component('HelloMessage', name: 'world!')%>`
 
-And that's it!  Save your changes and refresh the page and you should have your first React Component!  Now you are ready to unleash the power of React.js!
+That's it!  Save your changes and refresh the page and you should have your first React Component!  Now you are ready to unleash the power of React.js!
