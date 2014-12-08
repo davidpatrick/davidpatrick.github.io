@@ -84,4 +84,6 @@ Now to hook in our form on the page to the our mailchimp module we need to add `
 <button type="submit" class="btn btn-info" ng-disabled="MailchimpSubscriptionForm.$invalid" ng-click="addSubscription(mailchimp)" type="submit" value="SIGN UP" disabled="disabled">Submit</button>
 {% endhighlight %}
 
-That's it!  You are good to go.  This page can not be tested by simply opening up the file, it needs to be served to test it.  I am using Jekyll to run a local webserver, which is what Github pages uses, which will be the hosting platform for this landing page.  If you want to know more about Jekyll please check my first blog post about [starting a blog](http://dponrails.com/jekyll/poole/ruby/2014/09/15/staring-a-blog-with-jekyll.html)
+That's it!  You are good to go.  This page can not be tested by simply opening up the file, it needs to be served to test it.  I am using Jekyll to run a local webserver, which is what Github pages uses, which will be the hosting platform for this landing page.  If you want to know more about Jekyll please check my first blog post about [starting a blog](http://dponrails.com/jekyll/poole/ruby/2014/09/15/staring-a-blog-with-jekyll.html).
+
+You can view the code for this tutorial at [https://github.com/davidpatrick/angular-mailchimp-landing](https://github.com/davidpatrick/angular-mailchimp-landing)
