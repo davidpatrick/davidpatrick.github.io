@@ -117,13 +117,13 @@
 
 <h2>Second Step - Install Angular components</h2>
 
-<p>Open up terminal and CD that contains the index.html you just extracted. Run the following commands:</p>
+<p>Open up terminal and CD into the directory that contains the index.html you just extracted. Run the following commands:</p>
 
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">bower</span> <span class="nx">install</span> <span class="nx">angular</span>
 <span class="nx">bower</span> <span class="nx">install</span> <span class="nx">angular</span><span class="o">-</span><span class="nx">mailchimp</span>
 <span class="nx">bower</span> <span class="nx">init</span></code></pre></div>
 
-<p>To include what Bower just downloaded for us, copy into the following html into your <code>&lt;head&gt;&lt;/head&gt;</code></p>
+<p>To include what Bower just downloaded for us, copy the following html into your <code>&lt;head&gt;&lt;/head&gt;</code></p>
 
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;bower_components/angular/angular.min.js&quot;</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
 <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;bower_components/angular-mailchimp/angular-mailchimp.js&quot;</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
@@ -139,7 +139,7 @@
   <span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s2">&quot;productLaunch&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;mailchimp&quot;</span><span class="p">])</span>
 <span class="o">&lt;</span><span class="err">/script&gt;</span></code></pre></div>
 
-<p>Here we are defining the name of our app <em>productLaunch</em> and passing into the module <em>mailchimp</em>.  Next we will load the app by passing our app name to the ng-app directtive  <code>&lt;body ng-app=&quot;productLaunch&quot;&gt;</code>.  This allows us to use the Mailchimp module anywhere inside of our body.</p>
+<p>Here we are defining the name of our app <em>productLaunch</em> and injecting the module <em>mailchimp</em>.  Next we will load the app by passing our app name to the ng-app directtive  <code>&lt;body ng-app=&quot;productLaunch&quot;&gt;</code>.  This allows us to use the Mailchimp module anywhere inside of our body.</p>
 
 <h2>Fourth Step - Setting up Mailchimp</h2>
 

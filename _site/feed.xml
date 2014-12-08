@@ -5,8 +5,8 @@
     <description>Ruby, Angular, Javascript - The Exploration of One Developer</description>
     <link>http://dponrails.com/</link>
     <atom:link href="http://dponrails.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 08 Dec 2014 02:18:11 -0800</pubDate>
-    <lastBuildDate>Mon, 08 Dec 2014 02:18:11 -0800</lastBuildDate>
+    <pubDate>Mon, 08 Dec 2014 09:29:42 -0800</pubDate>
+    <lastBuildDate>Mon, 08 Dec 2014 09:29:42 -0800</lastBuildDate>
     <generator>Jekyll v2.5.1</generator>
     
       <item>
@@ -25,13 +25,13 @@
 
 &lt;h2&gt;Second Step - Install Angular components&lt;/h2&gt;
 
-&lt;p&gt;Open up terminal and CD that contains the index.html you just extracted. Run the following commands:&lt;/p&gt;
+&lt;p&gt;Open up terminal and CD into the directory that contains the index.html you just extracted. Run the following commands:&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;bower&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;angular&lt;/span&gt;
 &lt;span class=&quot;nx&quot;&gt;bower&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;angular&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;mailchimp&lt;/span&gt;
 &lt;span class=&quot;nx&quot;&gt;bower&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;init&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;To include what Bower just downloaded for us, copy into the following html into your &lt;code&gt;&amp;lt;head&amp;gt;&amp;lt;/head&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;To include what Bower just downloaded for us, copy the following html into your &lt;code&gt;&amp;lt;head&amp;gt;&amp;lt;/head&amp;gt;&lt;/code&gt;&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;bower_components/angular/angular.min.js&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;/script&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;bower_components/angular-mailchimp/angular-mailchimp.js&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;/script&amp;gt;&lt;/span&gt;
@@ -47,7 +47,7 @@
   &lt;span class=&quot;nx&quot;&gt;angular&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;productLaunch&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;mailchimp&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;/script&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Here we are defining the name of our app &lt;em&gt;productLaunch&lt;/em&gt; and passing into the module &lt;em&gt;mailchimp&lt;/em&gt;.  Next we will load the app by passing our app name to the ng-app directtive  &lt;code&gt;&amp;lt;body ng-app=&amp;quot;productLaunch&amp;quot;&amp;gt;&lt;/code&gt;.  This allows us to use the Mailchimp module anywhere inside of our body.&lt;/p&gt;
+&lt;p&gt;Here we are defining the name of our app &lt;em&gt;productLaunch&lt;/em&gt; and injecting the module &lt;em&gt;mailchimp&lt;/em&gt;.  Next we will load the app by passing our app name to the ng-app directtive  &lt;code&gt;&amp;lt;body ng-app=&amp;quot;productLaunch&amp;quot;&amp;gt;&lt;/code&gt;.  This allows us to use the Mailchimp module anywhere inside of our body.&lt;/p&gt;
 
 &lt;h2&gt;Fourth Step - Setting up Mailchimp&lt;/h2&gt;
 
@@ -99,9 +99,9 @@
     
       <item>
         <title>React on Rails Tutorial</title>
-        <description>&lt;p&gt;React.JS is a JavaScript library that allows us to build reuseable composable components.  It is powerful, fast, and really easy to get started with. In contrast to full blown front-end  MVC (Model View Controller) frameworks like Angular, Ember, and Backbone; React.js is only the view layer and actually can be used in any of those frameworks.  The learning curve for React.js isn&amp;#39;t as steep as it is with MVC frameworks, and it gives you a lot of bang for your buck. To learn more about React.js and why you should consider it further check out &lt;a href=&quot;http://scotch.io/tutorials/javascript/learning-react-getting-started-and-concepts&quot;&gt;Learning React.js&lt;/a&gt; and &lt;a href=&quot;http://www.syncano.com/reactjs-reasons-why-part-1/&quot;&gt;6 Reasons Why We Love React.js&lt;/a&gt;&lt;/p&gt;
+        <description>&lt;p&gt;React.JS is a JavaScript library that allows us to build reuseable components.  It is powerful, fast, and really easy to get started with. In contrast to full blown front-end MVC (Model View Controller) frameworks like Angular, Ember, and Backbone; React.js is only the view layer and actually can be used in any of those frameworks.  The learning curve for React.js isn&amp;#39;t as steep as it is with MVC frameworks. With React.js we can replace particular components on our site, without having to rewire the whole front-end.  This makes it perfect for Rails. To learn more about React.js and why you should consider it further check out &lt;a href=&quot;http://scotch.io/tutorials/javascript/learning-react-getting-started-and-concepts&quot;&gt;Learning React.js&lt;/a&gt; and &lt;a href=&quot;http://www.syncano.com/reactjs-reasons-why-part-1/&quot;&gt;6 Reasons Why We Love React.js&lt;/a&gt;&lt;/p&gt;
 
-&lt;h1&gt;Installing React.js&lt;/h1&gt;
+&lt;h2&gt;Installing React.js&lt;/h2&gt;
 
 &lt;ol&gt;
 &lt;li&gt;Add the gem to your gem file&lt;/li&gt;
@@ -132,7 +132,7 @@
 
 &lt;p&gt;&lt;code&gt;/app/assets/javascripts/react/components&lt;/code&gt;&lt;/p&gt;
 
-&lt;h1&gt;Implementing React.js&lt;/h1&gt;
+&lt;h2&gt;Implementing React.js&lt;/h2&gt;
 
 &lt;p&gt;First we are going to want to create our first React component.  First create  &lt;code&gt;/app/assets/javascripts/react/hello_world.js.jsx&lt;/code&gt;.  Inside of this file lets paste the following code&lt;/p&gt;
 
