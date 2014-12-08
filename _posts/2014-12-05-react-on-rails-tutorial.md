@@ -6,7 +6,9 @@ categories: react.js javascript
 image: 'http://i.imgur.com/hG49emr.jpg'
 ---
 
-React.JS is a JavaScript library that allows us to build reuseable components.  It is powerful, fast, and really easy to get started with. In contrast to full blown front-end MVC (Model View Controller) frameworks like Angular, Ember, and Backbone; React.js is only the view layer and actually can be used in any of those frameworks.  The learning curve for React.js isn't as steep as it is with MVC frameworks. With React.js we can replace particular components on our site, without having to rewire the whole front-end.  This makes it perfect for Rails. To learn more about React.js and why you should consider it further check out [Learning React.js](http://scotch.io/tutorials/javascript/learning-react-getting-started-and-concepts) and [6 Reasons Why We Love React.js](http://www.syncano.com/reactjs-reasons-why-part-1/)
+React.JS is a JavaScript library that allows us to build reuseable components.  It is powerful, fast, and really easy to get started with. In contrast to full blown front-end MVC (Model View Controller) frameworks like Angular, Ember, and Backbone; React.js is only the view layer and actually can be used in any of those frameworks.  The learning curve for React.js isn't as steep as it is with MVC frameworks. With React.js we can replace particular components on our site, without having to rewire the whole front-end.  This makes it perfect for Rails.  Getting it setup on your Rails app is a lot easier than you might think too, in this post we will walk through that process.
+
+ To learn more about React.js and why you should consider it further check out [Learning React.js](http://scotch.io/tutorials/javascript/learning-react-getting-started-and-concepts) and [6 Reasons Why We Love React.js](http://www.syncano.com/reactjs-reasons-why-part-1/)
 
 ##Installing React.js
 
