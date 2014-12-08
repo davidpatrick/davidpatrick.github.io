@@ -18,7 +18,7 @@ You will already need to have [Node Package Manger](http://www.nodejs.org) and [
 We are going to build this launch page off a free template from [BlackTie](http://www.blacktie.co/2014/03/counter-coming-soon-page/).  [Download](https://dl.dropboxusercontent.com/u/105401917/BlackTie/counter.zip) this template and extract it into a new directory.
 
 ## Second Step - Install Angular components
-Open up terminal and CD that contains the index.html you just extracted. Run the following commands:
+Open up terminal and CD into the directory that contains the index.html you just extracted. Run the following commands:
 
 {% highlight javascript %}
 bower install angular
@@ -26,7 +26,7 @@ bower install angular-mailchimp
 bower init
 {% endhighlight %}
 
-To include what Bower just downloaded for us, copy into the following html into your `<head></head>`
+To include what Bower just downloaded for us, copy the following html into your `<head></head>`
 {% highlight javascript %}
 <script src="bower_components/angular/angular.min.js"></script>
 <script src="bower_components/angular-mailchimp/angular-mailchimp.js"></script>
@@ -44,7 +44,7 @@ To load our Angular App and inject the mailchimp module, it's as easy as writing
 </script>
 {% endhighlight %}
 
-Here we are defining the name of our app *productLaunch* and passing into the module *mailchimp*.  Next we will load the app by passing our app name to the ng-app directtive  `<body ng-app="productLaunch">`.  This allows us to use the Mailchimp module anywhere inside of our body.
+Here we are defining the name of our app *productLaunch* and injecting the module *mailchimp*.  Next we will load the app by passing our app name to the ng-app directtive  `<body ng-app="productLaunch">`.  This allows us to use the Mailchimp module anywhere inside of our body.
 
 ##Fourth Step - Setting up Mailchimp
 To learn how to use the Mailchimp module visit [angular-mailchimp](https://github.com/keithio/angular-mailchimp). This will walk you through putting in your credentials for your Mailchimp account.  Which is basically filling out the following 4 hidden input fields
