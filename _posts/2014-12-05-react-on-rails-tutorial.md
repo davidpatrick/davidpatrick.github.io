@@ -3,7 +3,7 @@ layout: post
 title:  "React on Rails Tutorial"
 date:   2014-12-05 14:27:00
 categories: react.js javascript
-image: 'http://i.imgur.com/xfKGyx5.png'
+image: 'http://i.imgur.com/l2l4qG6.png'
 ---
 
 React.JS is a JavaScript library that allows us to build reuseable components.  It is powerful, fast, and really easy to get started with. In contrast to full blown front-end MVC (Model View Controller) frameworks like Angular, Ember, and Backbone; React.js is only the view layer and actually can be used in any of those frameworks.  The learning curve for React.js isn't as steep as it is with MVC frameworks. With React.js we can replace particular components on our site, without having to rewire the whole front-end.  This makes it perfect for Rails.  Getting it setup on your Rails app is a lot easier than you might think too, in this post we will walk through that process.
