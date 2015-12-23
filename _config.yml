@@ -1,10 +1,10 @@
 # Build settings
-markdown: redcarpet
+markdown: kramdown
 highlighter: pygments
 
 # Site settings
 title: dponrails
-description: "Ruby, Angular, Javascript - The Exploration of One Developer"
+description: "Ruby on Rails, React, Angular, Javascript - The Exploration of One Developer"
 
 email: davidwalterpatrick@gmail.com
 #blog logo

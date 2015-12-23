@@ -492,6 +492,7 @@ body {
     padding-top: 30px;
     margin-bottom: 10px; }
   .post .post-content p {
+    padding-bottom: 25px;
     font-weight: 400;
     font-style: normal;
     font-size: 22px;

@@ -8,7 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <title>React on Rails Tutorial</title>
-  <meta name="description" content="Ruby, Angular, Javascript - The Exploration of One Developer" />
+  <meta name="description" content="Ruby on Rails, React, Angular, Javascript - The Exploration of One Developer" />
 
   <meta name="HandheldFriendly" content="True" />
   <meta name="MobileOptimized" content="320" />
@@ -103,16 +103,15 @@
             <span class="post-reading-time"></span> read
           </div>
           <a name="topofpage"></a>
-          <p>React.JS is a JavaScript library that allows us to build reuseable components.  It is powerful, fast, and really easy to get started with. In contrast to full blown front-end MVC (Model View Controller) frameworks like Angular, Ember, and Backbone; React.js is only the view layer and actually can be used in any of those frameworks.  The learning curve for React.js isn&#39;t as steep as it is with MVC frameworks. With React.js we can replace particular components on our site, without having to rewire the whole front-end.  This makes it perfect for Rails.  Getting it setup on your Rails app is a lot easier than you might think too, in this post we will walk through that process.</p>
+          <p>React.JS is a JavaScript library that allows us to build reuseable components.  It is powerful, fast, and really easy to get started with. In contrast to full blown front-end MVC (Model View Controller) frameworks like Angular, Ember, and Backbone; React.js is only the view layer and actually can be used in any of those frameworks.  The learning curve for React.js isn’t as steep as it is with MVC frameworks. With React.js we can replace particular components on our site, without having to rewire the whole front-end.  This makes it perfect for Rails.  Getting it setup on your Rails app is a lot easier than you might think too, in this post we will walk through that process.</p>
 
 <p>To learn more about React.js and why you should consider it further check out <a href="http://scotch.io/tutorials/javascript/learning-react-getting-started-and-concepts">Learning React.js</a> and <a href="http://www.syncano.com/reactjs-reasons-why-part-1/">6 Reasons Why We Love React.js</a></p>
 
-<h2>Installing React.js</h2>
+<h2 id="installing-reactjs">Installing React.js</h2>
 
 <p>Add the gem to your gem file</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">gem</span> <span class="s1">&#39;react-rails&#39;</span><span class="p">,</span> <span class="s1">&#39;~&gt; 1.0.0.pre&#39;</span><span class="p">,</span> <span class="ss">github</span><span class="p">:</span> <span class="s1">&#39;reactjs/react-rails&#39;</span></code></pre></figure>
-  
 
 <p>Run the installation script</p>
 
@@ -123,19 +122,19 @@
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="sr">//</span><span class="o">=</span> <span class="nb">require</span> <span class="n">react</span>
 <span class="sr">//</span><span class="o">=</span> <span class="nb">require</span> <span class="n">react_ujs</span></code></pre></figure>
 
-<h1>Structuring React.js Files</h1>
+<h1 id="structuring-reactjs-files">Structuring React.js Files</h1>
 
 <p>Add the following into your application.js</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="sr">//</span><span class="o">=</span> <span class="n">require_tree</span> <span class="o">.</span><span class="n">/react</span><span class="o">/</span><span class="n">components</span></code></pre></figure>
 
-<p>This will allow us to put our react components in </p>
+<p>This will allow us to put our react components in</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="sr">/app/</span><span class="n">assets</span><span class="o">/</span><span class="n">javascripts</span><span class="o">/</span><span class="n">react</span><span class="o">/</span><span class="n">components</span></code></pre></figure>
 
-<h2>Implementing React.js</h2>
+<h2 id="implementing-reactjs">Implementing React.js</h2>
 
-<p>Creating out first React component is easy.  Create the following file <code>/app/assets/javascripts/react/hello_world.js.jsx</code>.  Inside of this file let&#39;s write the following code.</p>
+<p>Creating out first React component is easy.  Create the following file <code>/app/assets/javascripts/react/hello_world.js.jsx</code>.  Inside of this file let’s write the following code.</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  
     <span class="cm">/** @jsx React.DOM */</span>
@@ -156,9 +155,9 @@
   
   </code></pre></figure>
 
-<p>Implementing react components in our rails view is very straightforward, and thanks to the react-rails gem it gives us a nice view helper called react<em>component.  To lay down our react component all we have to do is add the following to our view `&lt;%=react</em>component(&#39;HelloMessage&#39;, name: &#39;world!&#39;)%&gt;`</p>
+<p>Implementing react components in our rails view is very straightforward, and thanks to the react-rails gem it gives us a nice view helper called react_component.  To lay down our react component all we have to do is add the following to our view <code>&lt;%=react_component('HelloMessage', name: 'world!')%&gt;</code></p>
 
-<p>That&#39;s it!  Save your changes and refresh the page and you should have your first React Component!  Now you are ready to unleash the power of React.js!</p>
+<p>That’s it!  Save your changes and refresh the page and you should have your first React Component!  Now you are ready to unleash the power of React.js!</p>
 
         </section>
         <footer class="post-footer">
@@ -208,7 +207,7 @@
     </div>
     <div class="inner">
       <h1 class="blog-title">dponrails</h1>
-      <h2 class="blog-description">Ruby, Angular, Javascript - The Exploration of One Developer</h2>
+      <h2 class="blog-description">Ruby on Rails, React, Angular, Javascript - The Exploration of One Developer</h2>
       <a href="/" class="btn">Back to Overview</a>
     </div>
     </div>
