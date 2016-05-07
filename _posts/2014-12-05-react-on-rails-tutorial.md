@@ -2,7 +2,7 @@
 layout: post
 title:  "React on Rails Tutorial"
 date:   2014-12-05 14:27:00
-categories: react.js javascript
+categories: reactjs javascript
 image: 'http://i.imgur.com/l2l4qG6.png'
 ---
 

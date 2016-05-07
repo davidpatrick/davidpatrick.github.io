@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <!-- (1) Optimize for mobile versions: http://goo.gl/EOpFl -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- (1) force latest IE rendering engine: bit.ly/1c8EiC9 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>dponrails - David Patrick</title>
+  <meta name="description" content="Ruby on Rails, React, Angular, Javascript - The Exploration of One Developer" />
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="MobileOptimized" content="320" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <link rel="canonical" href="http://dponrails.com/page2/">
+
+  <link rel="shortcut icon" href="/assets/images/favicon.ico">
+<!--  <link rel="stylesheet" href=""> -->
+  <link rel="stylesheet" href="http://brick.a.ssl.fastly.net/Linux+Libertine:400,400i,700,700i/Open+Sans:400,400i,700,700i">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" media="screen" href="/css/main.css" />
+  <link rel="stylesheet" type="text/css" media="print" href="/css/print.css" />
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+  <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+  <script type="text/javascript" src="/assets/js/index.js"></script>
+  <script type="text/javascript" src="/assets/js/readingTime.min.js"></script>
+</head>
+
+
+  <body>
+
+    <!-- header start -->
+
+<a href="http://dponrails.com" class="logo-readium"><span class="logo" style="background-image: url(/assets/images/author.jpg)"></span></a>
+
+<!-- header end -->
+
+
+    <!-- content start -->
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="teaserimage">
+    <div class="teaserimage-image" style="background-image: url(http://i.imgur.com/5n5F4MT.jpg)">
+        Teaser Image
+    </div>
+</div>
+
+<header class="blog-header">
+    
+      <a class="blog-logo" href="http://dponrails.com" style="background-image: url('/assets/images/author.jpg')">dponrails</a>
+    
+    <h1 class="blog-title">dponrails</h1>
+    <h2 class="blog-description">Ruby on Rails, React, Angular, Javascript - The Exploration of One Developer</h2>
+    <div class="custom-links">
+      
+        <a class="icon-twitter" href="https://twitter.com/dponrails">
+          <i class="fa fa-twitter"></i>
+        </a>
+        &nbsp;&nbsp;·&nbsp;&nbsp;
+      
+        <a class="icon-github" href="https://github.com/davidpatrick">
+          <i class="fa fa-github"></i>
+        </a>
+        &nbsp;&nbsp;·&nbsp;&nbsp;
+      
+        <a class="icon-medium" href="https://medium.com/@dp">
+          <i class="fa fa-medium"></i>
+        </a>
+        &nbsp;&nbsp;·&nbsp;&nbsp;
+      
+      <a href="/about/">About</a>
+      &nbsp;&nbsp;·&nbsp;&nbsp;
+      <a href="/archives/">Archives</a>
+    </div>
+</header>
+
+<script>
+    (function ($) {
+        "use strict";
+
+        $(document).ready(function(){
+
+            var $window = $(window),
+                $image = $('.teaserimage-image');
+            $window.on('scroll', function() {
+                var top = $window.scrollTop();
+
+                if (top < 0 || top > 1500) { return; }
+                $image
+                    .css('transform', 'translate3d(0px, '+top/3+'px, 0px)')
+                    .css('opacity', 1-Math.max(top/700, 0));
+            });
+            $window.trigger('scroll');
+
+        });
+
+    }(jQuery));
+</script>
+
+<main class="content" role="main">
+
+    <h5 class="index-headline normal"></h5>
+    <div class="cf frame">
+      
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting" role="article">
+          <div class="article-item">
+            <header class="post-header">
+              <h2 class="post-title" itemprop="name"><a href="/jekyll/poole/ruby/2014/09/15/staring-a-blog-with-jekyll.html" itemprop="url">Starting a Blog with Jekyll</a></h2>
+            </header>
+            <section class="post-excerpt" itemprop="descxription">
+              <p>When searching where to host our team’s blog we wanted to stay close to the community that we were trying to give back to. Github Pages immediately stood out and with the cost of $0 it’s perfect. Github Pages allows us to keep using the same tools we use everyday in Development for Blogging. Where to Start? The first thing you will want to do is choose a static site generator. To make it easy for you I’ve read through...</p>
+            </section>
+            <div class="post-meta">
+              <time datetime="15 September 2014">15 September 2014</time>
+            <!-- <span class="post-tags-set">on <span class="post-tag-">, <a href="/tag/"></a></span></span> -->
+            </div>
+          <div>
+        </article>
+      
+    </div>
+
+    <nav class="pagination" role="navigation">
+      
+      <span class="page-number">Page 2 of 2</span>
+      
+        
+          <a class="older-posts" href="/">Newer posts &rarr;</a>
+        
+      
+    </nav>
+
+
+    <!-- 
+     -->
+
+</main>
+
+      </div>
+    </div>
+
+    <!-- content end -->
+
+    <!-- footer start -->
+
+<footer class="site-footer">
+  <a class="subscribe" href="/feed.xml"> <span class="tooltip"> <i class="fa fa-rss"></i> Subscribe!</span></a>
+    <div class="inner">
+         <section class="copyright">All content copyright <a href="mailto:davidwalterpatrick@gmail.com">David Patrick</a> &copy; 2014 &bull; All rights reserved.</section>
+         <section class="poweredby">Made with <a href="http://jekyllrb.com"> Jekyll</a></section>
+    </div>
+</footer>
+
+<!-- footer end -->
+
+
+  </body>
+
+</html>

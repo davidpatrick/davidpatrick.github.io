@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <!-- (1) Optimize for mobile versions: http://goo.gl/EOpFl -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- (1) force latest IE rendering engine: bit.ly/1c8EiC9 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>React State Management & Promise.all Async Funneling</title>
+  <meta name="description" content="Ruby on Rails, React, Angular, Javascript - The Exploration of One Developer" />
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="MobileOptimized" content="320" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <link rel="canonical" href="http://dponrails.com/reactjs/javascript/promises/2016/05/06/reducing-state-updates-by-funneling-async-with-promises.html">
+
+  <link rel="shortcut icon" href="/assets/images/favicon.ico">
+<!--  <link rel="stylesheet" href=""> -->
+  <link rel="stylesheet" href="http://brick.a.ssl.fastly.net/Linux+Libertine:400,400i,700,700i/Open+Sans:400,400i,700,700i">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" media="screen" href="/css/main.css" />
+  <link rel="stylesheet" type="text/css" media="print" href="/css/print.css" />
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+  <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+  <script type="text/javascript" src="/assets/js/index.js"></script>
+  <script type="text/javascript" src="/assets/js/readingTime.min.js"></script>
+</head>
+
+  <body itemscope itemtype="http://schema.org/Article">
+    <!-- header start -->
+
+<a href="http://dponrails.com" class="logo-readium"><span class="logo" style="background-image: url(/assets/images/author.jpg)"></span></a>
+
+<!-- header end -->
+
+    <main class="content" role="main">
+      <article class="post">
+        
+        <div class="article-image">
+          <div class="post-image-image" style="background-image: url(http://i.imgur.com/wT0L1yb.png)">
+            Article Image
+          </div>
+          <div class="post-meta">
+            <h1 class="post-title">React State Management & Promise.all Async Funneling</h1>
+            <div class="cf post-meta-text">
+              <div class="author-image" style="background-image: url(/assets/images/author.jpg)">Blog Logo</div>
+              <h4 class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person">David Patrick</h4>
+              on
+              <time datetime="2016-05-06 05:00">06 May 2016</time>
+              <!-- , tagged on <span class="post-tag-">, <a href="/tag/"></a></span> -->
+            </div>
+            <div style="text-align:center">
+              <a href="#topofpage" class="topofpage"><i class="fa fa-angle-down"></i></a>
+            </div>
+          </div>
+        </div>
+        <script>
+          (function ($) {
+              "use strict";
+              $(document).ready(function(){
+                  var $window = $(window),
+                      $image = $('.post-image-image');
+                  $window.on('scroll', function() {
+                      var top = $window.scrollTop();
+
+                      if (top < 0 || top > 1500) { return; }
+                      $image
+                          .css('transform', 'translate3d(0px, '+top/3+'px, 0px)')
+                          .css('opacity', 1-Math.max(top/700, 0));
+                  });
+                  $window.trigger('scroll');
+
+                  var height = $('.article-image').height();
+                      $('.post-content').css('padding-top', height + 'px');
+
+                  $(function() {
+                    $('a[href*=#]:not([href=#])').click(function() {
+                      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+                        var target = $(this.hash);
+                        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                        if (target.length) {
+                          $('html,body').animate({
+                            scrollTop: target.offset().top
+                          }, 500);
+                          return false;
+                        }
+                      }
+                    });
+                  });
+
+              });
+
+          }(jQuery));
+        </script>
+        
+        <section class="post-content">
+          <div class="post-reading">
+            <span class="post-reading-time"></span> read
+          </div>
+          <a name="topofpage"></a>
+          
+<h3 id="multiple-async-calls-updating-state">Multiple Async Calls Updating State</h3>
+
+<p>In our app, we have multiple asynchronous calls firing off when it first loads up.  Each call is updating the state with the information it retrieves, in turn components are receiving new props and triggering their setup process more than once.  The first problem we have is the main container component rendering children before it is done gathering the data the children needs.</p>
+
+<p><img src="http://i.imgur.com/EkO9Z4o.gif" alt="Unintended Loading User Experience" title="Flashing Screen During Loading" /></p>
+
+<p>To fix this we need to manage when the children are rendered.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="k">if</span> <span class="p">(</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">setupComplete</span> <span class="p">)</span>
+  <span class="k">return</span> <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="s1">&#39;container&#39;</span><span class="o">&gt;</span>
+    <span class="p">{</span> <span class="nx">React</span><span class="p">.</span><span class="nx">cloneElement</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">children</span><span class="p">})</span> <span class="p">}</span>
+  <span class="o">&lt;</span><span class="err">/div&gt;</span>
+<span class="k">else</span>
+  <span class="k">return</span> <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="s1">&#39;loader&#39;</span><span class="o">&gt;</span>
+    <span class="nx">Loading</span><span class="p">...</span>
+  <span class="o">&lt;</span><span class="err">/div&gt;</span></code></pre></figure>
+
+<p>Don’t render the children until all of the async calls have finished. But how do we know when all of the calls are finished if they all finish at different times?  We could try and manage this by contionously updating our state each time an async call finishes checking to see if it should also set state.setupComplete, but I want to avoid component life cycles and only update state when the setup process is completed, not when part of it is completed.  For this scenario, I think Promises are a perfect use case, and the handy Promise.all can resolve all of our calls, and it makes handling failures a breeze too.</p>
+
+<p>We start by creating a Promise for each Async call and passing the Promise’s resolve/reject into our async calls.  We then resolve all of the promises at the same time using Promise.all.  That returns an array of promises, which we will loop through and assign the data to our newState object.  We can use setTimeout and have a 2sec delay to avoid our loading screen from flashing in and out.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Create a Promise for Each Async Call</span>
+<span class="c1">// For brevity I will include only 2 calls</span>
+<span class="kr">const</span> <span class="nx">userDataPromise</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Promise</span><span class="p">(</span> <span class="p">(</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span> 
+  <span class="nx">$</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/user&#39;</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">done</span><span class="p">(</span> <span class="nx">data</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="nx">resolve</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">})</span>
+    <span class="p">.</span><span class="nx">fail</span><span class="p">(</span> <span class="nx">error</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="nx">reject</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">})</span>
+<span class="p">})</span>
+<span class="kr">const</span> <span class="nx">layoutDataPromise</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Promise</span><span class="p">(</span> <span class="p">(</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span> 
+  <span class="nx">$</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/layout&#39;</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">done</span><span class="p">(</span> <span class="nx">data</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="nx">resolve</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">})</span>
+    <span class="p">.</span><span class="nx">fail</span><span class="p">(</span> <span class="nx">error</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="nx">reject</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">})</span>
+<span class="p">})</span>
+
+<span class="c1">// Resolve all Promises after a 2s delay</span>
+<span class="nx">setTimeout</span><span class="p">(</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">([</span>
+    <span class="nx">userDataPromise</span><span class="p">,</span>
+    <span class="nx">layoutDataPromise</span>
+  <span class="p">]).</span><span class="nx">then</span><span class="p">(</span> <span class="nx">promises</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="kr">const</span> <span class="nx">newState</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">setupComplete</span><span class="o">:</span> <span class="kc">true</span> <span class="p">}</span>
+
+    <span class="c1">// Assign promise data to our newState </span>
+      <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">promise</span> <span class="nx">of</span> <span class="nx">promises</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">(</span><span class="nx">newState</span><span class="p">,</span> <span class="nx">promise</span><span class="p">)</span>
+      <span class="p">}</span>
+
+      <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">(</span><span class="nx">newState</span><span class="p">)</span>
+    <span class="p">}).</span><span class="k">catch</span><span class="p">(</span> <span class="nx">failure</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="c1">// Easily Handle Failures</span>
+      <span class="kr">const</span> <span class="nx">newState</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">setupFailed</span><span class="o">:</span> <span class="kc">true</span> <span class="p">}</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">(</span><span class="nx">newState</span><span class="p">)</span>
+    <span class="p">})</span>
+<span class="p">},</span> <span class="mi">2000</span><span class="p">)</span></code></pre></figure>
+
+<p>Now let’s take a look at the result of Promise.all managing the Loading State.</p>
+
+<p><img src="http://i.imgur.com/VpyU55n.gif" alt="YES! Success." title="Optimized Loading Screen" /></p>
+
+<p>That is the user experience that we were going for!  Okay so we have avoided the flashing screen, and have created an extensible setup process, but what kind of performance gains did we get with these changes?</p>
+
+<h3 id="react-performance-tools">React Performance Tools</h3>
+<p>To get started measuring Reactjs performance we will use the <a href="https://facebook.github.io/react/docs/perf.html">Performance Tools</a> supplied to us by the Reactjs Team.  To install them run <code>npm install react-addons-perf -D</code> and before your ReactDOM.render put the following</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nb">window</span><span class="p">.</span><span class="nx">perf</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;react-addons-perf&#39;</span><span class="p">)</span> <span class="c1">//Mount the tools to the Window so we can run in console</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">perf</span><span class="p">.</span><span class="nx">start</span><span class="p">()</span></code></pre></figure>
+
+<p>Now when you run your page and your components have finished rendering, open up the web console and run the following</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">perf</span><span class="p">.</span><span class="nx">stop</span><span class="p">()</span>
+<span class="nx">perf</span><span class="p">.</span><span class="nx">printInclusive</span><span class="p">()</span> <span class="c1">// Prints the overall time taken.</span>
+<span class="nx">perf</span><span class="p">.</span><span class="nx">printExclusive</span><span class="p">()</span> <span class="c1">// Time excluding mounting</span>
+<span class="nx">perf</span><span class="p">.</span><span class="nx">printWasted</span><span class="p">()</span>    <span class="c1">// Time spent on components that didn&#39;t render anything</span></code></pre></figure>
+
+<p>Here are the results BEFORE we did any refactoring
+<img src="http://i.imgur.com/5ZnS8Oo.png" alt="Whoa! Look at all of that wasted time!" title="Performance Before Changes" /></p>
+
+<p>Here are the results AFTER we implented Promise.all and Loading State
+<img src="http://i.imgur.com/aRaYzvI.png" alt="Where did the wasted time go!" title="Performance After Changes" /></p>
+
+<p>The biggest gains we can see is in the difference in the amount of <a href="https://github.com/facebook/react/issues/4911">instances</a> and the amount of time spent on every component. One other thing you will notice that is missing in the second screenshot is the <a href="https://facebook.github.io/react/docs/perf.html#perf.printwastedmeasurements">wasted measurements</a>.  That is because we are no longer wasting anytime in the components!  Thanks to no longer rendering our components until the container is ready.  We have created a highly performant and easily mangeable loading state using Promise.all and not rendering our children until they are ready.</p>
+
+        </section>
+        <footer class="post-footer">
+          <section class="share">
+            
+              
+                <a class="icon-twitter" href="http://twitter.com/share?text=React+State+Management+%26+Promise.all+Async+Funneling&amp;url=http://dponrails.com/reactjs/javascript/promises/2016/05/06/reducing-state-updates-by-funneling-async-with-promises"
+                  onclick="window.open(this.href, 'twitter-share', 'width=550,height=255');return false;">
+                <i class="fa fa-twitter"></i><span class="hidden">twitter</span>
+                </a>
+              
+            
+              
+            
+              
+            
+          </section>
+        </footer>
+        <div class="bottom-teaser cf">
+          <div class="isLeft">
+            <h5 class="index-headline featured"><span>Written by</span></h5>
+            <section class="author">
+              <div class="author-image" style="background-image: url(/assets/images/author.jpg)">Blog Logo</div>
+              <h4>David Patrick</h4>
+              <p class="bio"></p>
+              <hr>
+              <p class="published">Published <time datetime="2016-05-06 05:00">06 May 2016</time></p>
+            </section>
+          </div>
+          
+          <div class="isRight">
+            <h5 class="index-headline featured"><span>Supported by</span></h5>
+            <footer class="site-footer">
+              <section class="poweredby">Proudly published with <a href="http://jekyllrb.com"> Jekyll</a></section>
+              <a class="subscribe" href="/feed.xml"> <span class="tooltip"> <i class="fa fa-rss"></i> You should subscribe to my feed.</span></a>
+              <div class="inner">
+                <section class="copyright">All content copyright <a href="/">David Patrick</a> &copy; 2014<br>All rights reserved.</section>
+              </div>
+            </footer>
+          </div>
+        </div>
+      </article>
+    </main>
+    <div class="bottom-closer">
+      <div class="background-closer-image"  style="background-image: url(http://i.imgur.com/5n5F4MT.jpg)">
+      Image
+    </div>
+    <div class="inner">
+      <h1 class="blog-title">dponrails</h1>
+      <h2 class="blog-description">Ruby on Rails, React, Angular, Javascript - The Exploration of One Developer</h2>
+      <a href="/" class="btn">Back to Overview</a>
+    </div>
+    </div>
+  </body>
+</html>
