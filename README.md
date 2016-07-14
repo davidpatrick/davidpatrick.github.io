@@ -5,4 +5,4 @@ This repo is intended for quick write ups on solving problems with code.  I am a
 
 Thanks goes out to
 -------
-Special thanks goes out to the [@dirkfabisch](https://twitter.com/dirkfabisch) who created the theme for this Jekyll Blog.
+Special thanks goes out to the [@dirkfabisch](https://twitter.com/dirkfabisch) who created the theme for this Jekyll Blog!
